@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stock Note | よくあるご質問</title>
+  <meta name="description" content="Stock Note について、よくあるご質問と回答をまとめています。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+
+  <style>
+    /* 追加: FAQ ページネーション用スタイル */
+    .faq-main-column {
+      gap: 22px;
+    }
+
+    .faq-list-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .faq-card-body {
+      min-width: 0;
+    }
+
+    .faq-card p {
+      margin: 0;
+    }
+
+    .faq-result-summary {
+      margin: 0;
+      color: #6c7a90;
+      font-size: 0.94rem;
+      line-height: 1.8;
+    }
+
+    .faq-empty-state {
+      text-align: center;
+      padding: 28px 24px;
+    }
+
+    .faq-empty-state strong {
+      display: block;
+      margin-bottom: 8px;
+      color: #1f3552;
+      font-size: 1.04rem;
+    }
+
+    .faq-empty-state span {
+      display: block;
+    }
+
+    .faq-pagination {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 2px;
+    }
+
+    .faq-pagination[hidden] {
+      display: none !important;
+    }
+
+    .faq-page-arrow,
+    .faq-page-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 40px;
+      height: 40px;
+      padding: 0 14px;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 1px solid #dce6f2;
+      color: #74839a;
+      font-weight: 700;
+      font-size: 0.92rem;
+      box-shadow: 0 10px 24px rgba(31, 53, 82, 0.04);
+      transition:
+        border-color 180ms ease,
+        background-color 180ms ease,
+        color 180ms ease,
+        transform 180ms ease,
+        box-shadow 180ms ease;
+      cursor: pointer;
+    }
+
+    .faq-page-arrow:hover,
+    .faq-page-number:hover {
+      border-color: #cfdcf0;
+      background: #f7fafd;
+      color: #4a78c9;
+      transform: translateY(-1px);
+    }
+
+    .faq-page-number.is-current {
+      background: #e9f1ff;
+      border-color: #c7d9f8;
+      color: #224b8f;
+      box-shadow: 0 12px 28px rgba(74, 120, 201, 0.12);
+    }
+
+    .faq-page-arrow.is-disabled,
+    .faq-page-number.is-disabled {
+      opacity: 0.42;
+      cursor: default;
+      pointer-events: none;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .faq-category-list button {
+      min-height: 44px;
+    }
+
+    .faq-side-card .faq-category-list button {
+      font-weight: 700;
+    }
+
+    @media (max-width: 640px) {
+      .faq-pagination {
+        gap: 8px;
+      }
+
+      .faq-page-arrow,
+      .faq-page-number {
+        min-width: 38px;
+        height: 38px;
+        padding: 0 12px;
+      }
+    }
+  </style>
+</head>
+
+<body class="faq-page">
+  <div class="page-shell">
+    <header class="site-header" id="top">
+      <div class="container nav-wrap">
+        <!-- 変更: テキストロゴから画像ロゴへ差し替え -->
+        <a class="brand site-logo" href="./index.html" aria-label="Stock Note ホーム">
+          <img src="./assets/logo-stocknote.png" alt="Stock Note" />
+        </a>
+
+        <nav class="site-nav" aria-label="メインナビゲーション">
+          <a href="./service.html">サービス紹介</a>
+          <a href="./feature.html">機能紹介</a>
+          <a href="./pricing.html">料金</a>
+          <a href="./news.html">お知らせ</a>
+          <a href="./faq.html">FAQ</a>
+          <a href="./contact.html">お問い合わせ</a>
+        </nav>
+
+        <div class="nav-actions">
+          <!-- 変更: ログインページへ遷移 -->
+          <a class="login-link" href="./login.html">ログイン</a>
+          <a class="btn btn-primary btn-small" href="./pricing.html">無料で始める</a>
+          <button class="menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false">
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main data-faq-app>
+      <section class="section faq-hero">
+        <div class="container faq-hero-inner reveal">
+          <h1>よくあるご質問</h1>
+          <p>Stock Note について、よくあるご質問をまとめています。</p>
+        </div>
+      </section>
+
+      <section class="section faq-main-section">
+        <div class="container faq-search-wrap reveal">
+          <label class="faq-search-box" aria-label="FAQをキーワード検索">
+            <span class="news-search-icon" aria-hidden="true"></span>
+            <input type="search" placeholder="キーワードで検索する" data-faq-app-search />
+          </label>
+        </div>
+
+        <div class="container faq-tabs reveal">
+          <!-- 変更: カテゴリ切り替えを JS state で管理 -->
+          <button class="news-tab is-active" type="button" data-faq-app-tab="all" aria-pressed="true">すべて</button>
+          <button class="news-tab" type="button" data-faq-app-tab="account" aria-pressed="false">アカウント・契約</button>
+          <button class="news-tab" type="button" data-faq-app-tab="feature" aria-pressed="false">機能・使い方</button>
+          <button class="news-tab" type="button" data-faq-app-tab="security" aria-pressed="false">セキュリティ</button>
+          <button class="news-tab" type="button" data-faq-app-tab="payment" aria-pressed="false">お支払い</button>
+        </div>
+
+        <div class="container faq-layout">
+          <div class="faq-main-column">
+            <p class="faq-result-summary reveal" data-faq-app-summary>
+              FAQを読み込み中です。
+            </p>
+
+            <!-- 変更: 一覧とページネーションを描画するための専用領域を追加 -->
+            <div class="faq-list-grid" id="faq-list" data-faq-app-list>
+              <!-- JS が FAQ データ配列から描画 -->
+            </div>
+
+            <nav class="faq-pagination reveal" aria-label="FAQページネーション" data-faq-app-pagination>
+              <!-- JS がページ番号を描画 -->
+            </nav>
+          </div>
+
+          <aside class="faq-side-column">
+            <section class="faq-guide-card reveal">
+              <h3>使い始めガイドを<br />チェックしましょう</h3>
+              <p>
+                初期設定から基本的な使い方まで、<br />
+                はじめての方にも分かりやすく<br />
+                ご案内しています。
+              </p>
+              <a href="./feature.html">詳しく見る</a>
+            </section>
+
+            <section class="faq-side-card reveal reveal-delay">
+              <h3>カテゴリー別FAQ</h3>
+              <p class="faq-category-intro">
+                知りたい内容に近いカテゴリへすぐ切り替えられます。<br />
+
+              </p>
+              <ul class="faq-category-list" data-faq-app-categories>
+                <!-- JS が詳細ページへのリンクを描画 -->
+              </ul>
+            </section>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section faq-cta-section">
+        <div class="container">
+          <div class="faq-cta-panel reveal">
+            <h2>解決しない場合はこちら</h2>
+            <p>
+              専任のサポートスタッフが内容を確認し、順次ご案内します。<br />
+              お困りの点があればお問い合わせフォームをご利用ください。
+            </p>
+            <div class="cta-actions">
+              <a class="btn btn-primary" href="./contact.html">お問い合わせ</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer section" id="contact">
+      <div class="container footer-grid">
+        <div>
+          <!-- 変更: フッターも新しい画像ロゴに統一 -->
+          <a class="brand site-logo footer-brand footer-logo" href="./index.html" aria-label="Stock Note ホーム">
+            <img src="./assets/logo-stocknote.png" alt="Stock Note" />
+          </a>
+          <p class="footer-copy">
+            必要な情報でより静かに、より明確に。<br />
+            シンプルで見やすい資産管理サービスです。
+          </p>
+        </div>
+
+        <div class="footer-column">
+          <h3>サービス</h3>
+          <a href="./service.html">サービス紹介</a>
+          <a href="./feature.html">機能紹介</a>
+          <a href="./pricing.html">料金</a>
+        </div>
+
+        <div class="footer-column">
+          <h3>サポート</h3>
+          <a href="./news.html">お知らせ</a>
+          <a href="./faq.html">FAQ</a>
+          <a href="./contact.html">お問い合わせ</a>
+        </div>
+
+        <div class="footer-column">
+          <h3>規約</h3>
+          <a href="./contact.html">利用規約</a>
+          <a href="./contact.html">プライバシーポリシー</a>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <small>&copy; Stock Note All Rights Reserved.</small>
+      </div>
+    </footer>
+  </div>
+
+  <script src="./script.js"></script>
+  <script>
+    /* 追加: FAQ データを配列で一元管理し、検索 + カテゴリ + ページネーションを制御 */
+    (() => {
+      const faqAppRoot = document.querySelector("[data-faq-app]");
+      if (!faqAppRoot) return;
+
+      const faqAppSearch = faqAppRoot.querySelector("[data-faq-app-search]");
+      const faqAppTabs = [...faqAppRoot.querySelectorAll("[data-faq-app-tab]")];
+      const faqAppSummary = faqAppRoot.querySelector("[data-faq-app-summary]");
+      const faqAppList = faqAppRoot.querySelector("[data-faq-app-list]");
+      const faqAppPagination = faqAppRoot.querySelector("[data-faq-app-pagination]");
+      const faqAppCategories = faqAppRoot.querySelector("[data-faq-app-categories]");
+
+      if (!faqAppSearch || !faqAppSummary || !faqAppList || !faqAppPagination || !faqAppCategories) return;
+
+      const categoryLabels = {
+        all: "すべて",
+        account: "アカウント・契約",
+        feature: "機能・使い方",
+        security: "セキュリティ",
+        payment: "お支払い",
+      };
+
+      const categoryDetailPages = {
+        account: "./faq-account.html",
+        feature: "./faq-feature.html",
+        security: "./faq-security.html",
+        payment: "./faq-payment.html",
+      };
+
+      const faqData = [
+        {
+          question: "無料プランではどこまで利用できますか？",
+          answer: "無料プランでは、資産一覧の登録、保有メモの作成、基本的なポートフォリオ表示をご利用いただけます。高度な分析機能や自動連携は有料プランで提供しています。",
+          category: "account",
+        },
+        {
+          question: "アカウント登録には何が必要ですか？",
+          answer: "メールアドレスとパスワードだけで登録できます。登録後に確認メールをお送りし、認証が完了するとすぐに使い始められます。",
+          category: "account",
+        },
+        {
+          question: "契約プランはいつでも変更できますか？",
+          answer: "はい。マイページの契約設定からいつでも変更できます。アップグレードは即時反映され、ダウングレードは次回更新日から適用されます。",
+          category: "account",
+        },
+        {
+          question: "退会するとデータはどうなりますか？",
+          answer: "退会後は一定期間データを保持したのち、安全に削除します。すぐに削除したい場合はサポートまでご連絡ください。",
+          category: "account",
+        },
+        {
+          question: "保有銘柄は手入力でも登録できますか？",
+          answer: "はい。株式、投資信託、現金などを手入力で登録できます。購入日や平均取得単価、メモもあわせて保存できます。",
+          category: "feature",
+        },
+        {
+          question: "検索機能では何を探せますか？",
+          answer: "FAQ内では質問文と回答文の両方を対象に検索できます。銘柄名や操作名、契約内容などのキーワードでも絞り込み可能です。",
+          category: "feature",
+        },
+        {
+          question: "スマートフォンでも使えますか？",
+          answer: "はい。ブラウザからスマートフォンでも快適にご利用いただけます。PCと同じアカウントでログインすれば、情報は同期されます。",
+          category: "feature",
+        },
+        {
+          question: "通知設定は自分で変更できますか？",
+          answer: "通知のオン・オフや配信内容は設定画面から変更できます。メール通知とアプリ内通知を用途に応じて切り替えられます。",
+          category: "feature",
+        },
+        {
+          question: "データのエクスポートは可能ですか？",
+          answer: "CSV形式でのエクスポートに対応しています。保有一覧や取引履歴を出力し、社内共有やバックアップにも活用できます。",
+          category: "feature",
+        },
+        {
+          question: "通信内容は暗号化されていますか？",
+          answer: "はい。すべての通信はSSL/TLSで暗号化されています。第三者が通信内容を読み取れないよう対策しています。",
+          category: "security",
+        },
+        {
+          question: "二段階認証は利用できますか？",
+          answer: "はい。ログイン時に確認コードを追加で求める二段階認証を設定できます。セキュリティ設定画面から有効化してください。",
+          category: "security",
+        },
+        {
+          question: "パスワードを忘れた場合はどうすればよいですか？",
+          answer: "ログイン画面の「パスワードを忘れた方」から再設定できます。登録済みメールアドレス宛に再設定用リンクを送信します。",
+          category: "security",
+        },
+        {
+          question: "外部サービスとの連携時の安全性は大丈夫ですか？",
+          answer: "連携時には必要最小限の情報のみを扱い、権限管理を徹底しています。取り扱い内容は連携画面で事前にご確認いただけます。",
+          category: "security",
+        },
+        {
+          question: "支払い方法は何に対応していますか？",
+          answer: "現在は主要なクレジットカードに対応しています。請求情報は契約設定画面から確認できます。",
+          category: "payment",
+        },
+        {
+          question: "請求書や領収書は発行できますか？",
+          answer: "はい。契約中のアカウントでは、請求履歴から請求書と領収書をPDFでダウンロードできます。",
+          category: "payment",
+        },
+        {
+          question: "月の途中で有料プランにした場合の請求はどうなりますか？",
+          answer: "お申し込み時点で課金が開始され、以降は同じ日付を基準に自動更新されます。日割りの扱いは契約画面に表示されます。",
+          category: "payment",
+        },
+        {
+          question: "支払いに失敗した場合はどうなりますか？",
+          answer: "登録メールアドレスに通知をお送りします。一定期間内に支払い方法を更新いただくと、そのままサービスを継続できます。",
+          category: "payment",
+        },
+        {
+          question: "プランの自動更新は停止できますか？",
+          answer: "はい。契約設定から自動更新を停止できます。停止後も契約期間の終了までは有料機能をご利用いただけます。",
+          category: "payment",
+        },
+      ];
+
+      const state = {
+        selectedCategory: "all",
+        searchKeyword: "",
+        currentPage: 1,
+        itemsPerPage: 3,
+      };
+
+      const escapeHtml = (value) =>
+        String(value)
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;")
+          .replaceAll("'", "&#39;");
+
+      const filterFaqs = () => {
+        const keyword = state.searchKeyword.trim().toLowerCase();
+
+        return faqData.filter((faq) => {
+          const matchesCategory =
+            state.selectedCategory === "all" || faq.category === state.selectedCategory;
+
+          if (!matchesCategory) return false;
+          if (!keyword) return true;
+
+          const haystack = `${faq.question} ${faq.answer} ${categoryLabels[faq.category]}`.toLowerCase();
+          return haystack.includes(keyword);
+        });
+      };
+
+      const getTotalPages = (filteredFaqs) =>
+        Math.max(1, Math.ceil(filteredFaqs.length / state.itemsPerPage));
+
+      const paginateFaqs = (filteredFaqs) => {
+        const totalPages = getTotalPages(filteredFaqs);
+        state.currentPage = Math.min(Math.max(state.currentPage, 1), totalPages);
+
+        const startIndex = (state.currentPage - 1) * state.itemsPerPage;
+        const endIndex = startIndex + state.itemsPerPage;
+
+        return filteredFaqs.slice(startIndex, endIndex);
+      };
+
+      const renderSummary = (filteredFaqs, totalPages) => {
+        const categoryLabel = categoryLabels[state.selectedCategory];
+        const keyword = state.searchKeyword.trim();
+
+        if (!filteredFaqs.length) {
+          faqAppSummary.textContent = keyword
+            ? `「${keyword}」の検索結果は0件です。`
+            : `${categoryLabel}のFAQは0件です。`;
+          return;
+        }
+
+        faqAppSummary.textContent = keyword
+          ? `「${keyword}」を含む ${categoryLabel} のFAQを ${filteredFaqs.length}件表示中（${state.currentPage} / ${totalPages}ページ）`
+          : `${categoryLabel} のFAQを ${filteredFaqs.length}件表示中（${state.currentPage} / ${totalPages}ページ）`;
+      };
+
+      const renderFaqList = (visibleFaqs) => {
+        if (!visibleFaqs.length) {
+          faqAppList.innerHTML = `
+            <div class="faq-empty-state">
+              <strong>該当するFAQが見つかりませんでした。</strong>
+              <span>別のキーワードやカテゴリでお試しください。</span>
+            </div>
+          `;
+          return;
+        }
+
+        faqAppList.innerHTML = visibleFaqs
+          .map((faq, index) => {
+            const delayClass =
+              index % 3 === 1 ? "reveal-delay" : index % 3 === 2 ? "reveal-delay-2" : "";
+
+            return `
+              <!-- 修正: 動的追加カードは即時表示されるよう is-visible を付与 -->
+              <article class="faq-card reveal is-visible ${delayClass}">
+                <div class="faq-qmark">Q.</div>
+                <div class="faq-card-body">
+                  <h2>${escapeHtml(faq.question)}</h2>
+                  <p>${escapeHtml(faq.answer)}</p>
+                </div>
+              </article>
+            `;
+          })
+          .join("");
+      };
+
+      const createPageButton = (pageNumber) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "faq-page-number";
+        button.textContent = String(pageNumber);
+        button.dataset.page = String(pageNumber);
+        button.setAttribute("aria-label", `${pageNumber}ページ目を表示`);
+
+        if (pageNumber === state.currentPage) {
+          button.classList.add("is-current");
+          button.setAttribute("aria-current", "page");
+        }
+
+        button.addEventListener("click", () => {
+          state.currentPage = pageNumber;
+          renderFaqApp();
+        });
+
+        return button;
+      };
+
+      const createArrowButton = (label, direction, disabled) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "faq-page-arrow";
+        button.textContent = label;
+        button.disabled = disabled;
+        button.setAttribute("aria-label", direction === "prev" ? "前のページ" : "次のページ");
+
+        if (disabled) {
+          button.classList.add("is-disabled");
+        }
+
+        button.addEventListener("click", () => {
+          if (disabled) return;
+          state.currentPage += direction === "prev" ? -1 : 1;
+          renderFaqApp();
+        });
+
+        return button;
+      };
+
+      const renderPagination = (filteredFaqs) => {
+        const totalPages = getTotalPages(filteredFaqs);
+        faqAppPagination.innerHTML = "";
+
+        if (!filteredFaqs.length) {
+          faqAppPagination.hidden = true;
+          return;
+        }
+
+        faqAppPagination.hidden = false;
+        faqAppPagination.appendChild(createArrowButton("前へ", "prev", state.currentPage === 1));
+
+        for (let page = 1; page <= totalPages; page += 1) {
+          faqAppPagination.appendChild(createPageButton(page));
+        }
+
+        faqAppPagination.appendChild(
+          createArrowButton("次へ", "next", state.currentPage === totalPages)
+        );
+      };
+
+      const renderCategoryLinks = () => {
+        const categoryKeys = ["account", "feature", "security", "payment"];
+
+        faqAppCategories.innerHTML = categoryKeys
+          .map((categoryKey) => {
+            return `
+              <li>
+                <!-- 修正: サイドカテゴリは詳細ページへの導線としてリンクに戻す -->
+                <a
+                  href="${categoryDetailPages[categoryKey]}"
+                  class="${categoryKey === state.selectedCategory ? "is-active" : ""}"
+                >
+                  <span>${categoryLabels[categoryKey]}</span>
+                </a>
+              </li>
+            `;
+          })
+          .join("");
+      };
+
+      const syncTopTabs = () => {
+        faqAppTabs.forEach((button) => {
+          const isActive = button.dataset.faqAppTab === state.selectedCategory;
+          button.classList.toggle("is-active", isActive);
+          button.setAttribute("aria-pressed", isActive ? "true" : "false");
+        });
+      };
+
+      const renderFaqApp = () => {
+        const filteredFaqs = filterFaqs();
+        const totalPages = getTotalPages(filteredFaqs);
+        const visibleFaqs = paginateFaqs(filteredFaqs);
+
+        syncTopTabs();
+        renderSummary(filteredFaqs, totalPages);
+        renderFaqList(visibleFaqs);
+        renderPagination(filteredFaqs);
+        renderCategoryLinks();
+
+        /* 修正: 共通 script.js の reveal 関数がグローバル公開されていなくても
+           FAQ カードが非表示にならないよう、このページ単体で完結させる */
+      };
+
+      faqAppTabs.forEach((button) => {
+        button.addEventListener("click", () => {
+          state.selectedCategory = button.dataset.faqAppTab || "all";
+          state.currentPage = 1;
+          renderFaqApp();
+        });
+      });
+
+      faqAppSearch.addEventListener("input", (event) => {
+        state.searchKeyword = event.target.value;
+        state.currentPage = 1;
+        renderFaqApp();
+      });
+
+      renderFaqApp();
+    })();
+  </script>
+</body>
+
+</html>

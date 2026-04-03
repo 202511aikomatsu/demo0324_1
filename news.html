@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stock Note | お知らせ・更新情報</title>
+  <meta name="description" content="Stock Note の最新のお知らせ、機能アップデート、メンテナンス情報を掲載しています。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body class="news-page">
+  <div class="page-shell">
+    <header class="site-header" id="top">
+      <div class="container nav-wrap">
+        <!-- 変更: テキストロゴから画像ロゴへ差し替え -->
+        <a class="brand site-logo" href="./index.html" aria-label="Stock Note ホーム">
+          <img src="./assets/logo-stocknote.png" alt="Stock Note" />
+        </a>
+
+        <nav class="site-nav" aria-label="メインナビゲーション">
+          <a href="./service.html">サービス紹介</a>
+          <a href="./feature.html">機能紹介</a>
+          <a href="./pricing.html">料金</a>
+          <a href="./news.html">お知らせ</a>
+          <a href="./faq.html">FAQ</a>
+          <a href="./contact.html">お問い合わせ</a>
+        </nav>
+
+        <div class="nav-actions">
+          <!-- 変更: ログインページへ遷移 -->
+          <a class="login-link" href="./login.html">ログイン</a>
+          <a class="btn btn-primary btn-small" href="./pricing.html">無料で始める</a>
+          <button class="menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false">
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section news-hero">
+        <div class="container news-hero-grid reveal">
+          <div class="news-hero-copy">
+            <h1>お知らせ・更新情報</h1>
+            <p>
+              Stock Note の最新情報をまとめてご案内します。機能改善やメンテナンス予定、<br />
+              サービスに関する大切なお知らせを見やすく整理して掲載しています。
+            </p>
+          </div>
+
+          <form class="news-search" action="./news.html">
+            <label class="news-search-box" aria-label="お知らせを検索">
+              <span class="news-search-icon" aria-hidden="true"></span>
+              <input type="search" name="q" placeholder="キーワードで検索" />
+            </label>
+          </form>
+        </div>
+      </section>
+
+      <section class="section news-list-section">
+        <div class="container news-tabs reveal">
+          <a class="news-tab is-active" href="./news.html" data-news-filter="all">すべて</a>
+          <a class="news-tab" href="./news.html" data-news-filter="update">更新情報</a>
+          <a class="news-tab" href="./news.html" data-news-filter="info">お知らせ</a>
+          <a class="news-tab" href="./news.html" data-news-filter="maintenance">メンテナンス</a>
+        </div>
+
+        <div class="container news-layout">
+          <div class="news-main-column" data-news-list>
+            <!-- 1件目 -->
+            <article class="news-card reveal" data-news-category="update">
+              <div class="news-thumb news-thumb-chart" aria-hidden="true"></div>
+              <div class="news-card-content">
+                <div class="news-meta">
+                  <time class="news-date" datetime="2024-11-15">2024.11.15</time>
+                  <span class="news-tag news-tag-update">更新情報</span>
+                </div>
+                <h2 class="news-title-compact">ポートフォリオ分析機能を<br />アップデートしました</h2>
+                <p>
+                  保有比率の表示や推移比較の見やすさを改善し、毎日の確認がより<br />
+                  スムーズになりました。 資産の変化を短時間で把握しやすいよう<br />
+                  グラフ表示と情報配置もあわせて調整しています。
+                </p>
+              </div>
+            </article>
+
+            <!-- 2件目 -->
+            <article class="news-card reveal reveal-delay" data-news-category="info">
+              <div class="news-thumb news-thumb-laptop" aria-hidden="true"></div>
+              <div class="news-card-content">
+                <div class="news-meta">
+                  <time class="news-date" datetime="2024-11-10">2024.11.10</time>
+                  <span class="news-tag news-tag-info">お知らせ</span>
+                </div>
+                <h2>新しいユーザーガイドを公開<br />しました</h2>
+                <p>
+                  はじめて Stock Note を使う方にも分かりやすいよう、初期設定から<br />
+                  日々の確認方法までを まとめたガイドページを公開しました。<br />
+                  迷わず使い始められる導線を整えています。
+                </p>
+              </div>
+            </article>
+
+            <!-- 3件目 -->
+            <article class="news-card reveal reveal-delay-2" data-news-category="maintenance">
+              <div class="news-thumb news-thumb-maintenance" aria-hidden="true"></div>
+              <div class="news-card-content">
+                <div class="news-meta">
+                  <time class="news-date" datetime="2024-11-05">2024.11.05</time>
+                  <span class="news-tag news-tag-maintenance">メンテナンス</span>
+                </div>
+                <h2>11月20日 深夜にシステム<br />メンテナンスを実施します</h2>
+                <p>
+                  安定したサービス提供のため対象時間帯にメンテナンスを予定<br />
+                  しています。 実施中は一部機能が利用しづらくなる可能性がありますので<br />
+                  あらかじめご了承ください。
+                </p>
+              </div>
+            </article>
+
+            <!-- 追加した4件目 -->
+            <article class="news-card reveal" data-news-category="update">
+              <div class="news-thumb news-thumb-calendar" aria-hidden="true"></div>
+              <div class="news-card-content">
+                <div class="news-meta">
+                  <time class="news-date" datetime="2024-11-01">2024.11.01</time>
+                  <span class="news-tag news-tag-update">更新情報</span>
+                </div>
+                <h2>配当カレンダー機能を改善<br />しました</h2>
+                <p>
+                  配当予定日と入金済み配当の見分けがしやすいように、表示レイアウトと色分けを調整しました。
+                  今後の収益確認をよりスムーズに行えます。
+                </p>
+              </div>
+            </article>
+
+            <!-- フロント側で表示切替するページネーション -->
+            <div class="news-pagination reveal" aria-label="ページネーション">
+              <button class="page-arrow" type="button" data-news-page-action="prev" aria-label="前のページ">前へ</button>
+              <button class="page-number is-current" type="button" data-news-page="1" aria-current="page">1</button>
+              <button class="page-number" type="button" data-news-page="2">2</button>
+              <button class="page-arrow" type="button" data-news-page-action="next" aria-label="次のページ">次へ</button>
+            </div>
+          </div>
+
+          <aside class="news-side-column">
+            <section class="news-side-card news-promo-card reveal">
+              <h3>Stock Note をもっと知る</h3>
+              <p>
+                保有株管理、配当の見える化、資産推移の<br />
+                確認などStock Note ができることを<br />
+                コンパクトにご紹介しています。
+              </p>
+              <a class="btn news-promo-button" href="./feature.html">機能紹介を見る</a>
+            </section>
+
+            <section class="news-side-card news-contact-card reveal reveal-delay-2">
+              <div class="news-contact-icon" aria-hidden="true"></div>
+              <h3>ご不明点はこちら</h3>
+              <p>
+                サービスやご利用方法に関するご相談は<br />
+                専用フォームより受け付けています。<br />
+                内容を確認のうえ、順次ご案内します。
+              </p>
+              <div class="news-contact-links">
+                <a href="./contact.html">お問い合わせフォームへ</a>
+                <a href="./faq.html">よくあるご質問</a>
+              </div>
+            </section>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer section" id="contact">
+      <div class="container footer-grid">
+        <div>
+          <!-- 変更: フッターも新しい画像ロゴに統一 -->
+          <a class="brand site-logo footer-brand footer-logo" href="./index.html" aria-label="Stock Note ホーム">
+            <img src="./assets/logo-stocknote.png" alt="Stock Note" />
+          </a>
+          <p class="footer-copy">
+            必要な情報でより静かに、より明確に。<br />
+            シンプルで見やすい資産管理サービスです。
+          </p>
+        </div>
+
+        <div class="footer-column">
+          <h3>サービス</h3>
+          <a href="./service.html">サービス紹介</a>
+          <a href="./feature.html">機能紹介</a>
+          <a href="./pricing.html">料金</a>
+        </div>
+
+        <div class="footer-column">
+          <h3>サポート</h3>
+          <a href="./news.html">お知らせ</a>
+          <a href="./faq.html">FAQ</a>
+          <a href="./contact.html">お問い合わせ</a>
+        </div>
+
+        <div class="footer-column">
+          <h3>規約</h3>
+          <a href="./contact.html">利用規約</a>
+          <a href="./contact.html">プライバシーポリシー</a>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <small>&copy; Stock Note All Rights Reserved.</small>
+      </div>
+    </footer>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>

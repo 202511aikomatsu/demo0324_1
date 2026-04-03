@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stock Note | アカウント・契約</title>
+  <meta name="description" content="Stock Note のアカウント・契約に関するFAQ一覧です。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<!-- 共通化: FAQ詳細ページは全カテゴリで同じ wrapper 構造を使う -->
+<body class="faq-page faq-detail-page">
+  <div class="page-shell">
+    <header class="site-header" id="top">
+      <div class="container nav-wrap">
+        <!-- 変更: テキストロゴから画像ロゴへ差し替え -->
+        <a class="brand site-logo" href="./index.html" aria-label="Stock Note ホーム">
+          <img src="./assets/logo-stocknote.png" alt="Stock Note" />
+        </a>
+        <nav class="site-nav" aria-label="メインナビゲーション">
+          <a href="./service.html">サービス紹介</a>
+          <a href="./feature.html">機能紹介</a>
+          <a href="./pricing.html">料金</a>
+          <a href="./news.html">お知らせ</a>
+          <a href="./faq.html">FAQ</a>
+          <a href="./contact.html">お問い合わせ</a>
+        </nav>
+        <div class="nav-actions">
+          <!-- 変更: ログインページへ遷移 -->
+          <a class="login-link" href="./login.html">ログイン</a>
+          <a class="btn btn-primary btn-small" href="./pricing.html">無料で始める</a>
+          <button class="menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false">
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="faq-detail-main">
+      <section class="section faq-hero">
+        <div class="faq-detail-container">
+          <!-- 共通化: hero直下の wrapper を faq-detail-hero 1つに統一 -->
+          <div class="faq-detail-hero reveal">
+            <h1 class="faq-hero__title">アカウント・契約</h1>
+            <p class="faq-hero__desc">Stock Note のアカウント設定や契約まわりに関するFAQ一覧です</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section faq-main-section">
+        <div class="faq-detail-container faq-detail-content">
+          <!-- 共通化: 検索バーも各ページで同一 wrapper に統一 -->
+          <div class="faq-search-wrap reveal">
+            <label class="faq-search-box faq-search" aria-label="アカウント・契約FAQをキーワード検索">
+              <span class="news-search-icon" aria-hidden="true"></span>
+              <input type="search" placeholder="キーワードで検索する" data-faq-search />
+            </label>
+          </div>
+
+          <!-- 共通化: content-grid は faq-detail-layout / faq-main / faq-sidebar に統一 -->
+          <div class="faq-layout faq-detail-layout">
+            <div class="faq-main-column faq-main">
+              <article class="faq-card reveal" data-faq-item data-faq-keywords="メールアドレス 変更 アカウント">
+                <div class="faq-qmark">Q.</div>
+                <div class="faq-card-body">
+                  <h2>メールアドレスは変更できますか？</h2>
+                  <p>マイページのアカウント設定から変更できます。変更後は確認メールをお送りしますので、認証完了後に新しいメールアドレスが有効になります。</p>
+                </div>
+              </article>
+
+            <article class="faq-card reveal reveal-delay" data-faq-item data-faq-keywords="パスワード 再設定 ログイン">
+              <div class="faq-qmark">Q.</div>
+              <div class="faq-card-body">
+                <h2>パスワードを忘れた場合はどうすればよいですか？</h2>
+                <p>ログイン画面の「パスワードを忘れた方」から再設定手続きに進めます。登録済みメールアドレス宛に再設定用リンクをお送りします。</p>
+              </div>
+            </article>
+
+            <article class="faq-card reveal reveal-delay-2" data-faq-item data-faq-keywords="退会 解約 アカウント">
+              <div class="faq-qmark">Q.</div>
+              <div class="faq-card-body">
+                <h2>退会手続きはどこから行えますか？</h2>
+                <p>マイページの契約情報からお手続きいただけます。退会前には保存データや現在の契約状況をご確認ください。</p>
+              </div>
+            </article>
+
+            <article class="faq-card reveal" data-faq-item data-faq-keywords="複数端末 スマートフォン PC タブレット">
+              <div class="faq-qmark">Q.</div>
+              <div class="faq-card-body">
+                <h2>複数端末で同じアカウントを利用できますか？</h2>
+                <p>ご利用いただけます。PC、スマートフォン、タブレットから同じアカウントでログインし、最新の情報を確認できます。</p>
+              </div>
+            </article>
+
+            <article class="faq-card reveal reveal-delay" data-faq-item data-faq-keywords="契約中 プラン 確認 マイページ">
+              <div class="faq-qmark">Q.</div>
+              <div class="faq-card-body">
+                <h2>契約中のプランはどこで確認できますか？</h2>
+                <p>マイページの契約情報画面で確認できます。現在のプラン名、更新日、利用中の機能を一覧でご覧いただけます。</p>
+              </div>
+            </article>
+
+              <p class="faq-empty-state" data-faq-empty hidden>該当するご質問は見つかりませんでした。別のキーワードでお試しください。</p>
+            </div>
+
+            <aside class="faq-side-column faq-sidebar">
+              <section class="faq-side-card sidebar-card reveal">
+                <h3>カテゴリーナビ</h3>
+                <nav class="faq-page-nav category-nav" aria-label="FAQカテゴリーページ">
+                  <a class="category-nav__link is-active" href="./faq-account.html">アカウント・契約</a>
+                  <a class="category-nav__link" href="./faq-feature.html">機能・使い方</a>
+                  <a class="category-nav__link" href="./faq-security.html">セキュリティ</a>
+                  <a class="category-nav__link" href="./faq-payment.html">お支払い</a>
+                </nav>
+              </section>
+
+            <section class="faq-side-card sidebar-card reveal reveal-delay">
+              <h3>FAQトップへ</h3>
+              <p class="faq-category-intro">カテゴリ横断で探したい場合は、FAQトップページの検索もあわせてご活用ください。</p>
+              <a class="faq-top-link" href="./faq.html">FAQトップを見る</a>
+              </section>
+            </aside>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer section">
+      <div class="container footer-grid">
+        <div>
+          <!-- 変更: フッターも新しい画像ロゴに統一 -->
+          <a class="brand site-logo footer-brand footer-logo" href="./index.html" aria-label="Stock Note ホーム">
+            <img src="./assets/logo-stocknote.png" alt="Stock Note" />
+          </a>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <small>&copy; Stock Note All Rights Reserved.</small>
+      </div>
+    </footer>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>

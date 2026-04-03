@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stock Note | プレミアムプランのお申し込み</title>
+  <meta name="description" content="リアルタイム株価更新や配当トラッキングの自動化など、プレミアム機能をご利用いただけます。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body class="login-page premium-signup-page">
+  <div class="page-shell">
+    <header class="site-header" id="top">
+      <div class="container nav-wrap">
+        <!-- 変更: テキストロゴから画像ロゴへ差し替え -->
+        <a class="brand site-logo" href="./index.html" aria-label="Stock Note ホーム">
+          <img src="./assets/logo-stocknote.png" alt="Stock Note" />
+        </a>
+
+        <nav class="site-nav" aria-label="メインナビゲーション">
+          <a href="./service.html">サービス紹介</a>
+          <a href="./feature.html">機能紹介</a>
+          <a href="./pricing.html">料金</a>
+          <a href="./news.html">お知らせ</a>
+          <a href="./faq.html">FAQ</a>
+          <a href="./contact.html">お問い合わせ</a>
+        </nav>
+
+        <div class="nav-actions">
+          <!-- 追加: 既存ユーザー向けログイン導線 -->
+          <a class="login-link" href="./login.html">ログイン</a>
+          <a class="btn btn-primary btn-small" href="./signup.html">無料で始める</a>
+          <button class="menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false">
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="login-main">
+      <!-- 修正: 新規登録ページと同じ2カラムレイアウト構造に統一 -->
+      <div class="login-shell">
+        <section class="login-panel reveal">
+          <div class="login-panel-body">
+            <div class="login-header">
+              <h1>プレミアムプランのお申し込み</h1>
+              <p>リアルタイム株価更新や配当トラッキングの自動化など、プレミアム機能をご利用いただけます</p>
+            </div>
+
+            <!-- 追加: 選択中プランを明示 -->
+            <div class="premium-plan-summary">
+              <span class="premium-plan-label">選択中のプラン</span>
+              <div class="premium-plan-main">
+                <h2>プレミアムプラン</h2>
+                <span class="premium-plan-price">月額 ¥1,980</span>
+              </div>
+              <p>ポートフォリオ比較、リアルタイム株価更新、配当カレンダー通知など、より深い資産管理を始められます。</p>
+            </div>
+
+            <form class="login-form">
+              <label class="login-field">
+                <span>お名前</span>
+                <input type="text" placeholder="山田 太郎" />
+              </label>
+
+              <label class="login-field">
+                <span>メールアドレス</span>
+                <input type="email" placeholder="example@stocknote.jp" />
+              </label>
+
+              <label class="login-field">
+                <span>パスワード</span>
+                <input type="password" placeholder="8文字以上で入力" />
+              </label>
+
+              <label class="login-field">
+                <span>パスワード確認</span>
+                <input type="password" placeholder="もう一度パスワードを入力" />
+              </label>
+
+              <div class="login-field">
+                <span>お支払い方法</span>
+                <div class="premium-payment-group">
+                  <label class="premium-payment-option">
+                    <input type="radio" name="payment" checked />
+                    <span>クレジットカード</span>
+                  </label>
+                  <label class="premium-payment-option">
+                    <input type="radio" name="payment" />
+                    <span>デビットカード</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="login-options">
+                <label class="login-check">
+                  <input type="checkbox" />
+                  <span>利用規約に同意する</span>
+                </label>
+              </div>
+
+              <button class="btn btn-primary login-submit premium-submit" type="submit">プレミアムを開始する</button>
+
+              <div class="login-links">
+                <a href="./signup.html">無料プランをご希望の方はこちら</a>
+                <a href="./login.html">すでにアカウントをお持ちの方はこちら</a>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <aside class="login-side">
+          <!-- 修正: 右側は新規登録ページと同じく、補助カードを自然な高さで縦積み -->
+          <section class="login-side-card premium-side-card reveal">
+            <h2>プレミアムでできること</h2>
+            <ul class="premium-side-list">
+              <li>
+                <h3>リアルタイムで相場を確認</h3>
+                <p>値動きの変化をすばやく把握し、日々の確認がしやすくなります。</p>
+              </li>
+              <li>
+                <h3>配当の管理を自動化</h3>
+                <p>配当トラッキングや通知機能で、受取状況の整理がよりスムーズになります。</p>
+              </li>
+              <li>
+                <h3>分析機能をフル活用</h3>
+                <p>比較や推移の見える化を通じて、投資判断をより明確に整理できます。</p>
+              </li>
+            </ul>
+          </section>
+
+          <section class="login-side-card premium-side-card reveal reveal-delay">
+            <h2>まずは内容を確認したい方へ</h2>
+            <p>プレミアムと無料プランの違いは料金ページで比較できます。導入前の不明点がある場合は、お問い合わせからご相談ください。</p>
+            <a class="login-sub-link" href="./pricing.html">料金ページを見る</a>
+          </section>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="site-footer section" id="contact">
+      <div class="container footer-grid service-footer-grid">
+        <div>
+          <!-- 変更: フッターも新しい画像ロゴに統一 -->
+          <a class="brand site-logo footer-brand footer-logo" href="./index.html" aria-label="Stock Note ホーム">
+            <img src="./assets/logo-stocknote.png" alt="Stock Note" />
+          </a>
+        </div>
+
+        <div class="footer-column">
+          <a href="./contact.html">利用規約</a>
+          <a href="./contact.html">プライバシーポリシー</a>
+        </div>
+
+        <div class="footer-column">
+          <a href="./contact.html">運営会社</a>
+          <a href="./faq.html">ヘルプセンター</a>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <small>&copy; 2024 STOCK NOTE. THE ENLIGHTENED ATELIER.</small>
+      </div>
+    </footer>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>

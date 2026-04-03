@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stock Note | お支払い</title>
+  <meta name="description" content="Stock Note のお支払いに関するFAQ一覧です。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body class="faq-page faq-detail-page">
+  <div class="page-shell">
+    <header class="site-header" id="top">
+      <div class="container nav-wrap">
+        <!-- 変更: テキストロゴから画像ロゴへ差し替え -->
+        <a class="brand site-logo" href="./index.html" aria-label="Stock Note ホーム">
+          <img src="./assets/logo-stocknote.png" alt="Stock Note" />
+        </a>
+        <nav class="site-nav" aria-label="メインナビゲーション">
+          <a href="./service.html">サービス紹介</a>
+          <a href="./feature.html">機能紹介</a>
+          <a href="./pricing.html">料金</a>
+          <a href="./news.html">お知らせ</a>
+          <a href="./faq.html">FAQ</a>
+          <a href="./contact.html">お問い合わせ</a>
+        </nav>
+        <div class="nav-actions">
+          <!-- 変更: ログインページへ遷移 -->
+          <a class="login-link" href="./login.html">ログイン</a>
+          <a class="btn btn-primary btn-small" href="./pricing.html">無料で始める</a>
+          <button class="menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false">
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="faq-detail-main">
+      <section class="section faq-hero">
+        <div class="faq-detail-container">
+          <div class="faq-detail-hero reveal">
+            <h1 class="faq-hero__title">お支払い</h1>
+            <p class="faq-hero__desc">料金や支払い方法、請求確認に関するFAQ一覧です</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section faq-main-section">
+        <div class="faq-detail-container faq-detail-content">
+          <div class="faq-search-wrap reveal">
+            <label class="faq-search-box faq-search" aria-label="お支払いFAQをキーワード検索">
+              <span class="news-search-icon" aria-hidden="true"></span>
+              <input type="search" placeholder="キーワードで検索する" data-faq-search />
+            </label>
+          </div>
+
+          <div class="faq-layout faq-detail-layout">
+            <div class="faq-main-column faq-main">
+              <article class="faq-card reveal" data-faq-item data-faq-keywords="無料プラン 利用 機能">
+                <div class="faq-qmark">Q.</div>
+                <div class="faq-card-body">
+                  <h2>無料プランでは何が利用できますか？</h2>
+                  <p>資産一覧の確認、基本的なポートフォリオ管理、配当の概要表示をご利用いただけます。高度な分析機能は有料プランで提供しています。</p>
+                </div>
+              </article>
+
+            <article class="faq-card reveal reveal-delay" data-faq-item data-faq-keywords="プレミアムプラン 料金 月額">
+              <div class="faq-qmark">Q.</div>
+              <div class="faq-card-body">
+                <h2>プレミアムプランの料金はいくらですか？</h2>
+                <p>料金はプランページで最新の内容をご確認いただけます。月額と年額の両方から、ご利用スタイルに合わせて選択できます。</p>
+              </div>
+            </article>
+
+            <article class="faq-card reveal reveal-delay-2" data-faq-item data-faq-keywords="支払い方法 クレジットカード">
+              <div class="faq-qmark">Q.</div>
+              <div class="faq-card-body">
+                <h2>支払い方法は何に対応していますか？</h2>
+                <p>クレジットカード決済に対応しています。ご利用可能なブランドはお申し込み画面に表示されます。</p>
+              </div>
+            </article>
+
+            <article class="faq-card reveal" data-faq-item data-faq-keywords="請求書 領収書 PDF">
+              <div class="faq-qmark">Q.</div>
+              <div class="faq-card-body">
+                <h2>請求書や領収書は確認できますか？</h2>
+                <p>契約情報ページから請求履歴と領収書を確認できます。PDF形式で保存できるため、社内申請や経費管理にも便利です。</p>
+              </div>
+            </article>
+
+            <article class="faq-card reveal reveal-delay" data-faq-item data-faq-keywords="解約 更新日 契約">
+              <div class="faq-qmark">Q.</div>
+              <div class="faq-card-body">
+                <h2>解約はいつでもできますか？</h2>
+                <p>はい、マイページからいつでもお手続きいただけます。次回更新日までは現在の有料機能をご利用いただけます。</p>
+              </div>
+            </article>
+
+              <p class="faq-empty-state" data-faq-empty hidden>該当するご質問は見つかりませんでした。別のキーワードでお試しください。</p>
+            </div>
+
+            <aside class="faq-side-column faq-sidebar">
+              <section class="faq-side-card sidebar-card reveal">
+                <h3>カテゴリーナビ</h3>
+                <nav class="faq-page-nav category-nav" aria-label="FAQカテゴリーページ">
+                  <a class="category-nav__link" href="./faq-account.html">アカウント・契約</a>
+                  <a class="category-nav__link" href="./faq-feature.html">機能・使い方</a>
+                  <a class="category-nav__link" href="./faq-security.html">セキュリティ</a>
+                  <a class="category-nav__link is-active" href="./faq-payment.html">お支払い</a>
+                </nav>
+              </section>
+
+            <section class="faq-side-card sidebar-card reveal reveal-delay">
+              <h3>FAQトップへ</h3>
+              <p class="faq-category-intro">カテゴリ横断の質問を探したい場合は、FAQトップページから一覧検索も行えます。</p>
+              <a class="faq-top-link" href="./faq.html">FAQトップを見る</a>
+              </section>
+            </aside>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer section">
+      <div class="container footer-grid">
+        <div>
+          <!-- 変更: フッターも新しい画像ロゴに統一 -->
+          <a class="brand site-logo footer-brand footer-logo" href="./index.html" aria-label="Stock Note ホーム">
+            <img src="./assets/logo-stocknote.png" alt="Stock Note" />
+          </a>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <small>&copy; Stock Note All Rights Reserved.</small>
+      </div>
+    </footer>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stock Note | 通知設定について</title>
+  <meta name="description" content="Stock Note の通知設定に関するFAQ一覧です。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body class="faq-page">
+  <div class="page-shell">
+    <header class="site-header" id="top">
+      <div class="container nav-wrap">
+        <!-- 変更: テキストロゴから画像ロゴへ差し替え -->
+        <a class="brand site-logo" href="./index.html" aria-label="Stock Note ホーム">
+          <img src="./assets/logo-stocknote.png" alt="Stock Note" />
+        </a>
+        <nav class="site-nav" aria-label="メインナビゲーション">
+          <a href="./service.html">サービス紹介</a>
+          <a href="./feature.html">機能紹介</a>
+          <a href="./pricing.html">料金</a>
+          <a href="./news.html">お知らせ</a>
+          <a href="./faq.html">FAQ</a>
+          <a href="./contact.html">お問い合わせ</a>
+        </nav>
+        <div class="nav-actions">
+          <!-- 変更: ログインページへ遷移 -->
+          <a class="login-link" href="./login.html">ログイン</a>
+          <a class="btn btn-primary btn-small" href="./pricing.html">無料で始める</a>
+          <button class="menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false">
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section faq-hero">
+        <div class="container faq-hero-inner reveal">
+          <h1>通知設定について</h1>
+          <p>通知やアラート機能に関するよくあるご質問をまとめています</p>
+        </div>
+      </section>
+
+      <section class="section faq-main-section">
+        <div class="container faq-search-wrap reveal">
+          <label class="faq-search-box" aria-label="通知設定FAQをキーワード検索">
+            <span class="news-search-icon" aria-hidden="true"></span>
+            <input type="search" placeholder="キーワードで検索する" data-faq-search />
+          </label>
+        </div>
+
+        <div class="container faq-layout">
+          <div class="faq-main-column">
+            <article class="faq-card reveal" data-faq-item data-faq-keywords="配当通知 設定 入金">
+              <div class="faq-qmark">Q.</div>
+              <div class="faq-card-body">
+                <h2>配当通知は設定できますか？</h2>
+                <p>設定できます。配当予定日や入金完了時の通知を有効にすると、確認漏れを防ぎやすくなります。</p>
+              </div>
+            </article>
+
+            <article class="faq-card reveal reveal-delay" data-faq-item data-faq-keywords="価格アラート 通知 銘柄">
+              <div class="faq-qmark">Q.</div>
+              <div class="faq-card-body">
+                <h2>価格アラートはありますか？</h2>
+                <p>一部の銘柄について、指定した価格帯に到達した際のアラート通知に対応しています。設定は銘柄詳細画面から行えます。</p>
+              </div>
+            </article>
+
+            <article class="faq-card reveal reveal-delay-2" data-faq-item data-faq-keywords="通知メール 停止 オン オフ">
+              <div class="faq-qmark">Q.</div>
+              <div class="faq-card-body">
+                <h2>通知メールを停止できますか？</h2>
+                <p>
+                  通知設定ページからメール通知のオン・オフを切り替えられます。<br />
+                  必要な通知だけを残すことも可能です。
+                </p>
+              </div>
+            </article>
+
+            <article class="faq-card reveal" data-faq-item data-faq-keywords="アプリ内通知 メール通知 分ける">
+              <div class="faq-qmark">Q.</div>
+              <div class="faq-card-body">
+                <h2>アプリ内通知とメール通知は分けられますか？</h2>
+                <p>
+                  分けて設定できます。通知種別ごとに受け取り方法を選べるため、ご利用スタイルに<br />
+                  合わせて調整できます。
+                </p>
+              </div>
+            </article>
+
+            <article class="faq-card reveal reveal-delay" data-faq-item data-faq-keywords="通知タイミング 変更 設定">
+              <div class="faq-qmark">Q.</div>
+              <div class="faq-card-body">
+                <h2>通知タイミングは変更できますか？</h2>
+                <p>通知の種類によっては、前日や当日などのタイミングを選択できます。設定可能な項目は通知設定画面に表示されます。</p>
+              </div>
+            </article>
+
+            <p class="faq-empty-state" data-faq-empty hidden>
+              該当するご質問は見つかりませんでした。別のキーワードでお試しください。
+            </p>
+          </div>
+
+          <aside class="faq-side-column">
+            <section class="faq-side-card reveal">
+              <h3>カテゴリーナビ</h3>
+              <nav class="faq-page-nav" aria-label="FAQカテゴリーページ">
+                <a href="./faq-account.html">登録・ログインについて</a>
+                <a href="./faq-pricing.html">料金プランと契約内容</a>
+                <a href="./faq-import.html">データのインポート</a>
+                <a class="is-active" href="./faq-notification.html">通知設定について</a>
+              </nav>
+            </section>
+
+            <section class="faq-side-card reveal reveal-delay">
+              <h3>FAQトップへ</h3>
+              <p class="faq-category-intro">通知以外のFAQもまとめて探したい場合は、FAQトップページからご確認ください。</p>
+              <a class="faq-top-link" href="./faq.html">FAQトップを見る</a>
+            </section>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer section">
+      <div class="container footer-grid">
+        <div>
+          <!-- 変更: フッターも新しい画像ロゴに統一 -->
+          <a class="brand site-logo footer-brand footer-logo" href="./index.html" aria-label="Stock Note ホーム">
+            <img src="./assets/logo-stocknote.png" alt="Stock Note" />
+          </a>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <small>&copy; Stock Note All Rights Reserved.</small>
+      </div>
+    </footer>
+  </div>
+  <script src="./script.js"></script>
+</body>
+
+</html>

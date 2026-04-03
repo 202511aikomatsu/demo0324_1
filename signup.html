@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stock Note | 新規登録</title>
+  <meta name="description" content="アカウントを作成して、保有株・配当・資産推移をまとめて管理しましょう。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body class="login-page">
+  <div class="page-shell">
+    <header class="site-header" id="top">
+      <div class="container nav-wrap">
+        <!-- 変更: テキストロゴから画像ロゴへ差し替え -->
+        <a class="brand site-logo" href="./index.html" aria-label="Stock Note ホーム">
+          <img src="./assets/logo-stocknote.png" alt="Stock Note" />
+        </a>
+
+        <nav class="site-nav" aria-label="メインナビゲーション">
+          <a href="./service.html">サービス紹介</a>
+          <a href="./feature.html">機能紹介</a>
+          <a href="./pricing.html">料金</a>
+          <a href="./news.html">お知らせ</a>
+          <a href="./faq.html">FAQ</a>
+          <a href="./contact.html">お問い合わせ</a>
+        </nav>
+
+        <div class="nav-actions">
+          <!-- 追加: 新規登録画面からもログインへ戻れる導線 -->
+          <a class="login-link" href="./login.html">ログイン</a>
+          <a class="btn btn-primary btn-small" href="./pricing.html">無料で始める</a>
+          <button class="menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false">
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="login-main">
+      <div class="login-shell">
+        <section class="login-panel reveal">
+          <div class="login-panel-body">
+            <div class="login-header">
+              <h1>新規登録</h1>
+              <p>アカウントを作成して、保有株・配当・資産推移をまとめて管理しましょう</p>
+            </div>
+
+            <form class="login-form">
+              <label class="login-field">
+                <span>お名前</span>
+                <input type="text" placeholder="山田 太郎" />
+              </label>
+
+              <label class="login-field">
+                <span>メールアドレス</span>
+                <input type="email" placeholder="example@stocknote.jp" />
+              </label>
+
+              <label class="login-field">
+                <span>パスワード</span>
+                <input type="password" placeholder="8文字以上で入力" />
+                <p class="login-field-note">半角英数字を含む8文字以上を推奨しています。</p>
+              </label>
+
+              <label class="login-field">
+                <span>パスワード確認</span>
+                <input type="password" placeholder="もう一度パスワードを入力" />
+              </label>
+
+              <div class="login-options">
+                <label class="login-check">
+                  <input type="checkbox" />
+                  <span>利用規約に同意する</span>
+                </label>
+              </div>
+
+              <button class="btn btn-primary login-submit" type="submit">新規登録する</button>
+
+              <div class="login-links">
+                <a href="./login.html">すでにアカウントをお持ちの方はこちら</a>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <aside class="login-side">
+          <section class="login-side-card reveal">
+            <h2>登録後にできること</h2>
+            <ul class="login-feature-list">
+              <li>
+                <h3>保有株をまとめて管理</h3>
+                <p>銘柄、取得価格、評価額などをひとつの画面で見やすく管理できます。</p>
+              </li>
+              <li>
+                <h3>配当の受取状況を確認</h3>
+                <p>予定と実績を整理しながら、配当の流れを落ち着いて追えます。</p>
+              </li>
+              <li>
+                <h3>資産推移を見える化</h3>
+                <p>推移グラフで日々の変化を把握し、中長期の状況確認にも役立ちます。</p>
+              </li>
+            </ul>
+          </section>
+
+          <section class="login-side-card reveal reveal-delay">
+            <h2>安心して始められます</h2>
+            <p>シンプルで見やすい画面設計で、忙しい日でも必要な情報にすぐアクセスできます。使い方に迷った場合はFAQやお問い合わせもご利用いただけます。</p>
+            <a class="login-sub-link" href="./faq.html">FAQを見る</a>
+          </section>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="site-footer section" id="contact">
+      <div class="container footer-grid service-footer-grid">
+        <div>
+          <!-- 変更: フッターも新しい画像ロゴに統一 -->
+          <a class="brand site-logo footer-brand footer-logo" href="./index.html" aria-label="Stock Note ホーム">
+            <img src="./assets/logo-stocknote.png" alt="Stock Note" />
+          </a>
+        </div>
+
+        <div class="footer-column">
+          <a href="./contact.html">利用規約</a>
+          <a href="./contact.html">プライバシーポリシー</a>
+        </div>
+
+        <div class="footer-column">
+          <a href="./contact.html">運営会社</a>
+          <a href="./faq.html">ヘルプセンター</a>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <small>&copy; 2024 STOCK NOTE. THE ENLIGHTENED ATELIER.</small>
+      </div>
+    </footer>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>

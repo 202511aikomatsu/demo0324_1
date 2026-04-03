@@ -1,0 +1,341 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stock Note | 資産の流れをひと目で</title>
+  <meta name="description" content="保有株・資産推移・配当金をまとめて見られる、シンプルで見やすい資産管理サービス。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <div class="page-shell">
+    <header class="site-header" id="top">
+      <div class="container nav-wrap">
+        <!-- 変更: テキストロゴから画像ロゴへ差し替え -->
+        <a class="brand site-logo" href="./index.html" aria-label="Stock Note ホーム">
+          <img src="./assets/logo-stocknote.png" alt="Stock Note" />
+        </a>
+
+        <nav class="site-nav" aria-label="メインナビゲーション">
+          <a href="./service.html">サービス紹介</a>
+          <a href="./feature.html">機能紹介</a>
+          <a href="./pricing.html">料金</a>
+          <a href="./news.html">お知らせ</a>
+          <a href="./faq.html">FAQ</a>
+          <a href="./contact.html">お問い合わせ</a>
+        </nav>
+
+        <div class="nav-actions">
+          <!-- 変更: ログインページへ遷移 -->
+          <a class="login-link" href="./login.html">ログイン</a>
+          <a class="btn btn-primary btn-small" href="./pricing.html">無料で始める</a>
+          <button class="menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false">
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero section">
+        <div class="hero-backdrop"></div>
+        <div class="container hero-grid">
+          <div class="hero-copy reveal">
+            <h1>資産の流れを<span>ひと目で</span></h1>
+            <p class="hero-description">
+              保有株・資産推移・配当金をまとめて見られる、シンプルで見やすい資産管理サービス
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="./pricing.html">無料で始める</a>
+              <a class="btn btn-secondary" href="./feature.html">機能紹介を見る</a>
+            </div>
+          </div>
+
+          <div class="dashboard-card reveal reveal-delay">
+            <div class="metric-grid">
+              <article class="metric-panel">
+                <span class="metric-label">総資産</span>
+                <strong>¥14,250,800</strong>
+                <small>+¥124,000 (+0.8%)</small>
+              </article>
+              <article class="metric-panel">
+                <span class="metric-label">評価損益</span>
+                <strong>+¥2,450,000</strong>
+                <small>通算損益 : +17.2%</small>
+              </article>
+              <article class="metric-panel">
+                <span class="metric-label">年間配当金（予想）</span>
+                <strong>¥480,200</strong>
+                <small>配当利回り : 3.37%</small>
+              </article>
+            </div>
+
+            <div class="dashboard-main">
+              <div class="chart-panel">
+                <div class="panel-head">
+                  <h2>資産構成</h2>
+                  <div class="chip-group" aria-label="表示期間の切り替え">
+                    <button class="chip" type="button" data-range="month">1か月</button>
+                    <button class="chip chip-active" type="button" data-range="year">1年</button>
+                    <button class="chip" type="button" data-range="all">全期間</button>
+                  </div>
+                </div>
+
+                <div class="chart-area" aria-hidden="true" data-chart-range="year">
+                  <div class="bar bar-1"></div>
+                  <div class="bar bar-2"></div>
+                  <div class="bar bar-3"></div>
+                  <div class="bar bar-4"></div>
+                  <div class="bar bar-5"></div>
+                  <div class="bar bar-6"></div>
+                  <div class="graph-line"></div>
+                  <div class="graph-dot"></div>
+                </div>
+              </div>
+
+              <aside class="holdings-panel">
+                <h2>主要銘柄</h2>
+                <ul data-holdings-list>
+                  <li><span>トヨタ自動車(7203)</span><strong>25%</strong></li>
+                  <li><span>ソニーグループ(6758)</span><strong>20%</strong></li>
+                  <li><span>ソフトバンクグループ(9984)</span><strong>15%</strong></li>
+                  <li><span>キーエンス(6861)</span><strong>12%</strong></li>
+                </ul>
+              </aside>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section intro-section" id="about">
+        <div class="container section-heading reveal">
+          <h2>必要な投資情報をひとつに</h2>
+          <p>シンプルだから迷わない。確認したい数字を静かに整えて、日々の投資判断を支えます。</p>
+        </div>
+
+        <div class="container card-grid" id="features">
+          <article class="info-card reveal">
+            <div class="icon-box icon-navy">
+              <svg class="micro-icon micro-icon-list" viewBox="0 0 54 54" aria-hidden="true">
+                <rect class="icon-bg" x="1" y="1" width="52" height="52" rx="13"></rect>
+                <rect class="icon-card-surface" x="12" y="11" width="28" height="32" rx="8"></rect>
+                <circle class="icon-list-dot icon-line-1" cx="18.5" cy="21" r="1.6"></circle>
+                <circle class="icon-list-dot icon-line-2" cx="18.5" cy="27" r="1.6"></circle>
+                <circle class="icon-list-dot icon-line-3" cx="18.5" cy="33" r="1.6"></circle>
+                <line class="icon-line icon-line-1" x1="22" y1="21" x2="31.5" y2="21"></line>
+                <line class="icon-line icon-line-2" x1="22" y1="27" x2="29.5" y2="27"></line>
+                <line class="icon-line icon-line-3" x1="22" y1="33" x2="28.5" y2="33"></line>
+              </svg>
+            </div>
+            <h3>保有株管理</h3>
+            <p>
+              国内外の株式・ETFを一括管理。現在の評価額や取得単価、損益をリアルタイムに近い感覚で把握できます。
+            </p>
+          </article>
+
+          <article class="info-card reveal reveal-delay">
+            <div class="icon-box icon-blue">
+              <svg class="micro-icon micro-icon-chart" viewBox="0 0 54 54" aria-hidden="true">
+                <rect class="icon-bg" x="1" y="1" width="52" height="52" rx="13"></rect>
+                <rect class="icon-chart-panel" x="11.5" y="12" width="31" height="29" rx="8"></rect>
+                <line class="icon-grid-line" x1="17" y1="34.5" x2="37" y2="34.5"></line>
+                <line class="icon-grid-line" x1="17" y1="28" x2="37" y2="28"></line>
+                <path class="icon-chart-area"
+                  d="M17 34.5 L17 31.5 C20.2 30.4 22.2 26.2 25 25.2 C28.2 24 30.4 27 33 22.5 C34.4 20.1 35.8 18.7 37 17.5 L37 34.5 Z">
+                </path>
+                <path class="icon-graph-line"
+                  d="M17 31.5 C20.2 30.4 22.2 26.2 25 25.2 C28.2 24 30.4 27 33 22.5 C34.4 20.1 35.8 18.7 37 17.5">
+                </path>
+                <circle class="icon-graph-dot" cx="37" cy="17.5" r="2.7"></circle>
+              </svg>
+            </div>
+              <h3>資産推移グラフ</h3>
+              <p>
+                日次、月次での資産の増減を美しいグラフで<br />
+                可視化。自分の投資パフォーマンスを直感的に<br />
+                振り返ることが可能です。
+              </p>
+            </article>
+
+          <article class="info-card reveal reveal-delay-2">
+            <div class="icon-box icon-green">
+              <svg class="micro-icon micro-icon-coin" viewBox="0 0 54 54" aria-hidden="true">
+                <rect class="icon-bg" x="1" y="1" width="52" height="52" rx="13"></rect>
+                <g class="icon-coin-stack icon-stack-left">
+                  <ellipse class="icon-stack-top" cx="18.9" cy="30.8" rx="4.8" ry="2.1"></ellipse>
+                  <path class="icon-stack-side"
+                    d="M14.1 30.8 V36 C14.1 37.2 16.2 38.3 18.9 38.3 C21.6 38.3 23.7 37.2 23.7 36 V30.8"></path>
+                  <ellipse class="icon-stack-bottom" cx="18.9" cy="36" rx="4.8" ry="2.1"></ellipse>
+                  <ellipse class="icon-stack-top icon-stack-layer" cx="18.9" cy="33.4" rx="4.8" ry="2.1"></ellipse>
+                </g>
+                <g class="icon-coin-stack icon-stack-mid">
+                  <ellipse class="icon-stack-top" cx="27.7" cy="23.4" rx="5.4" ry="2.4"></ellipse>
+                  <path class="icon-stack-side"
+                    d="M22.3 23.4 V34.2 C22.3 35.6 24.7 36.8 27.7 36.8 C30.7 36.8 33.1 35.6 33.1 34.2 V23.4"></path>
+                  <ellipse class="icon-stack-bottom" cx="27.7" cy="34.2" rx="5.4" ry="2.4"></ellipse>
+                  <ellipse class="icon-stack-top icon-stack-layer" cx="27.7" cy="26.1" rx="5.4" ry="2.4"></ellipse>
+                  <ellipse class="icon-stack-top icon-stack-layer" cx="27.7" cy="28.8" rx="5.4" ry="2.4"></ellipse>
+                  <ellipse class="icon-stack-top icon-stack-layer" cx="27.7" cy="31.5" rx="5.4" ry="2.4"></ellipse>
+                </g>
+                <g class="icon-coin-stack icon-stack-right">
+                  <ellipse class="icon-stack-top" cx="36.5" cy="30.8" rx="4.8" ry="2.1"></ellipse>
+                  <path class="icon-stack-side"
+                    d="M31.7 30.8 V36 C31.7 37.2 33.8 38.3 36.5 38.3 C39.2 38.3 41.3 37.2 41.3 36 V30.8"></path>
+                  <ellipse class="icon-stack-bottom" cx="36.5" cy="36" rx="4.8" ry="2.1"></ellipse>
+                  <ellipse class="icon-stack-top icon-stack-layer" cx="36.5" cy="33.4" rx="4.8" ry="2.1"></ellipse>
+                </g>
+                <circle class="icon-spark icon-spark-a" cx="17" cy="18.4" r="1"></circle>
+                <circle class="icon-spark icon-spark-b" cx="38.4" cy="18.4" r="1"></circle>
+              </svg>
+            </div>
+              <h3>配当金管理</h3>
+              <p>
+                年間配当予定額や月別の配当推移を表示。<br />
+                不労所得の成長を実感でき、長期投資の<br />
+                モチベーションにつながります。
+              </p>
+            </article>
+        </div>
+      </section>
+
+      <section class="section feature-section">
+        <div class="container feature-grid">
+          <div class="feature-copy reveal">
+            <h2>見やすさと使いやすさを重視した設計</h2>
+              <p class="feature-lead">
+                私たちは「データの羅列」ではなく、投資家が次の一手を<br />
+                考えやすい画面設計を目指しています。
+              </p>
+            <ul class="feature-list">
+              <li>
+                <span class="feature-index">01</span>
+                <div>
+                    <h3>短時間で確認できる</h3>
+                    <p>
+                      忙しい日でも、数分で今日のポートフォリオ状況を<br />
+                      確認できる導線にしています。
+                    </p>
+                  </div>
+                </li>
+              <li>
+                <span class="feature-index">02</span>
+                <div>
+                    <h3>必要な情報を一元化</h3>
+                    <p>
+                      複数の証券口座を行き来せず、資産の流れを<br />
+                      ひとつの画面で整理できます。
+                    </p>
+                  </div>
+                </li>
+              <li>
+                <span class="feature-index">03</span>
+                <div>
+                    <h3>長期投資向け設計</h3>
+                    <p>
+                      短期の値動きに振り回されず、配当と資産成長を<br />
+                      継続して見守れるUIです。
+                    </p>
+                  </div>
+                </li>
+            </ul>
+          </div>
+
+          <div class="feature-visual reveal reveal-delay">
+            <div class="visual-frame">
+              <div class="visual-glow"></div>
+              <div class="visual-device"></div>
+              <div class="visual-overlay" aria-hidden="true">
+                <div class="visual-pill visual-pill-left">
+                  <span class="visual-pill-number">01</span>
+                  <span class="visual-pill-text">持株残高</span>
+                </div>
+                <div class="visual-pill visual-pill-right">
+                  <span class="visual-pill-number">02</span>
+                  <span class="visual-pill-text">資産推移</span>
+                </div>
+                <div class="visual-panel visual-panel-main">
+                  <span class="visual-panel-label">総資産残高</span>
+                  <strong>¥14,250,800</strong>
+                  <small>+¥124,000 (+0.8%)</small>
+                </div>
+                <div class="visual-panel visual-panel-side">
+                  <span class="visual-panel-label">年間配当</span>
+                  <strong>¥480,200</strong>
+                  <small>配当成長 +9.83%</small>
+                </div>
+                <div class="visual-badge visual-badge-left-top">資産確認</div>
+                <div class="visual-badge visual-badge-left-bottom">保有分析</div>
+                <div class="visual-note">分散先 推奨比率: 5.7%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section cta-section" id="pricing">
+        <div class="container">
+          <div class="cta-panel reveal">
+            <div class="cta-copy">
+              <h2>保有株・配当・資産推移を、<br />ひとつで管理しませんか</h2>
+            </div>
+            <div class="cta-actions">
+              <a class="btn btn-light" href="./pricing.html">無料で始める</a>
+              <a class="btn btn-outline-light" href="./contact.html">お問い合わせ</a>
+            </div>
+            <div class="cta-curve" aria-hidden="true"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer section" id="contact">
+      <div class="container footer-grid">
+        <div>
+            <!-- 変更: フッターも新しい画像ロゴに統一 -->
+            <a class="brand site-logo footer-brand footer-logo" href="./index.html" aria-label="Stock Note ホーム">
+              <img src="./assets/logo-stocknote.png" alt="Stock Note" />
+            </a>
+            <p class="footer-copy">
+              必要な情報でより静かに、より明確に。<br />
+              シンプルで見やすい資産管理サービスです。
+            </p>
+          </div>
+
+        <div class="footer-column">
+          <h3>サービス</h3>
+          <a href="./service.html">サービス紹介</a>
+          <a href="./feature.html">機能紹介</a>
+          <a href="./pricing.html">料金</a>
+        </div>
+
+        <div class="footer-column" id="news">
+          <h3>サポート</h3>
+          <a href="./news.html">お知らせ</a>
+          <a href="./faq.html">FAQ</a>
+          <a href="./contact.html">お問い合わせ</a>
+        </div>
+
+        <div class="footer-column">
+          <h3>規約</h3>
+          <a href="./contact.html">利用規約</a>
+          <a href="./contact.html">プライバシーポリシー</a>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <small>&copy; Stock Note All Rights Reserved.</small>
+      </div>
+    </footer>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>

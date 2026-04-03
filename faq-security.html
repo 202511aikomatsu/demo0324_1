@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stock Note | セキュリティ</title>
+  <meta name="description" content="Stock Note のセキュリティに関するFAQ一覧です。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body class="faq-page faq-detail-page">
+  <div class="page-shell">
+    <header class="site-header" id="top">
+      <div class="container nav-wrap">
+        <!-- 変更: テキストロゴから画像ロゴへ差し替え -->
+        <a class="brand site-logo" href="./index.html" aria-label="Stock Note ホーム">
+          <img src="./assets/logo-stocknote.png" alt="Stock Note" />
+        </a>
+        <nav class="site-nav" aria-label="メインナビゲーション">
+          <a href="./service.html">サービス紹介</a>
+          <a href="./feature.html">機能紹介</a>
+          <a href="./pricing.html">料金</a>
+          <a href="./news.html">お知らせ</a>
+          <a href="./faq.html">FAQ</a>
+          <a href="./contact.html">お問い合わせ</a>
+        </nav>
+        <div class="nav-actions">
+          <!-- 変更: ログインページへ遷移 -->
+          <a class="login-link" href="./login.html">ログイン</a>
+          <a class="btn btn-primary btn-small" href="./pricing.html">無料で始める</a>
+          <button class="menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false">
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="faq-detail-main">
+      <section class="section faq-hero">
+        <div class="faq-detail-container">
+          <div class="faq-detail-hero reveal">
+            <h1 class="faq-hero__title">セキュリティ</h1>
+            <p class="faq-hero__desc">安全性やデータ保護に関するよくあるご質問をまとめています</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section faq-main-section">
+        <div class="faq-detail-container faq-detail-content">
+          <div class="faq-search-wrap reveal">
+            <label class="faq-search-box faq-search" aria-label="セキュリティFAQをキーワード検索">
+              <span class="news-search-icon" aria-hidden="true"></span>
+              <input type="search" placeholder="キーワードで検索する" data-faq-search />
+            </label>
+          </div>
+
+          <div class="faq-layout faq-detail-layout">
+            <div class="faq-main-column faq-main">
+              <article class="faq-card reveal" data-faq-item data-faq-keywords="通信 暗号化 SSL TLS">
+                <div class="faq-qmark">Q.</div>
+                <div class="faq-card-body">
+                  <h2>通信は暗号化されていますか？</h2>
+                  <p>すべての通信は SSL/TLS により暗号化されています。ログインや資産情報の送受信も安全な環境で保護されています。</p>
+                </div>
+              </article>
+
+            <article class="faq-card reveal reveal-delay" data-faq-item data-faq-keywords="二段階認証 ログイン セキュリティ">
+              <div class="faq-qmark">Q.</div>
+              <div class="faq-card-body">
+                <h2>2段階認証に対応していますか？</h2>
+                <p>対応しています。ログイン時の本人確認を強化できるため、第三者による不正アクセスの抑止に役立ちます。</p>
+              </div>
+            </article>
+
+            <article class="faq-card reveal reveal-delay-2" data-faq-item data-faq-keywords="ログイン履歴 確認">
+              <div class="faq-qmark">Q.</div>
+              <div class="faq-card-body">
+                <h2>ログイン履歴は確認できますか？</h2>
+                <p>アカウント設定内のセキュリティ項目から最近のログイン履歴を確認できます。気になるアクセスがあれば早めにご確認ください。</p>
+              </div>
+            </article>
+
+            <article class="faq-card reveal" data-faq-item data-faq-keywords="データ 保護 バックアップ">
+              <div class="faq-qmark">Q.</div>
+              <div class="faq-card-body">
+                <h2>データはどのように保護されていますか？</h2>
+                <p>重要なデータはアクセス制御された環境で管理し、継続的な監視と運用見直しを行っています。バックアップ体制も整備しています。</p>
+              </div>
+            </article>
+
+            <article class="faq-card reveal reveal-delay" data-faq-item data-faq-keywords="セキュリティ通知 通知メール">
+              <div class="faq-qmark">Q.</div>
+              <div class="faq-card-body">
+                <h2>セキュリティ通知は受け取れますか？</h2>
+                <p>受け取れます。ログイン環境の変化や重要な設定変更があった場合は、メールやアプリ内通知でお知らせします。</p>
+              </div>
+            </article>
+
+              <p class="faq-empty-state" data-faq-empty hidden>該当するご質問は見つかりませんでした。別のキーワードでお試しください。</p>
+            </div>
+
+            <aside class="faq-side-column faq-sidebar">
+              <section class="faq-side-card sidebar-card reveal">
+                <h3>カテゴリーナビ</h3>
+                <nav class="faq-page-nav category-nav" aria-label="FAQカテゴリーページ">
+                  <a class="category-nav__link" href="./faq-account.html">アカウント・契約</a>
+                  <a class="category-nav__link" href="./faq-feature.html">機能・使い方</a>
+                  <a class="category-nav__link is-active" href="./faq-security.html">セキュリティ</a>
+                  <a class="category-nav__link" href="./faq-payment.html">お支払い</a>
+                </nav>
+              </section>
+
+            <section class="faq-side-card sidebar-card reveal reveal-delay">
+              <h3>FAQトップへ</h3>
+              <p class="faq-category-intro">カテゴリ横断で確認したい場合は、FAQトップページから全体検索もご利用いただけます。</p>
+              <a class="faq-top-link" href="./faq.html">FAQトップを見る</a>
+              </section>
+            </aside>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer section">
+      <div class="container footer-grid">
+        <div>
+          <!-- 変更: フッターも新しい画像ロゴに統一 -->
+          <a class="brand site-logo footer-brand footer-logo" href="./index.html" aria-label="Stock Note ホーム">
+            <img src="./assets/logo-stocknote.png" alt="Stock Note" />
+          </a>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <small>&copy; Stock Note All Rights Reserved.</small>
+      </div>
+    </footer>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>

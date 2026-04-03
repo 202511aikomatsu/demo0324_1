@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stock Note | 機能紹介</title>
+  <meta name="description" content="Stock Note の機能紹介。保有株・資産推移・配当金をまとめて見られる、シンプルで見やすい資産管理サービス。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body class="feature-page">
+  <div class="page-shell">
+    <header class="site-header" id="top">
+      <div class="container nav-wrap">
+        <!-- 変更: テキストロゴから画像ロゴへ差し替え -->
+        <a class="brand site-logo" href="./index.html" aria-label="Stock Note ホーム">
+          <img src="./assets/logo-stocknote.png" alt="Stock Note" />
+        </a>
+
+        <nav class="site-nav" aria-label="メインナビゲーション">
+          <a href="./service.html">サービス紹介</a>
+          <a href="./feature.html">機能紹介</a>
+          <a href="./pricing.html">料金</a>
+          <a href="./news.html">お知らせ</a>
+          <a href="./faq.html">FAQ</a>
+          <a href="./contact.html">お問い合わせ</a>
+        </nav>
+
+        <div class="nav-actions">
+          <!-- 変更: ログインページへ遷移 -->
+          <a class="login-link" href="./login.html">ログイン</a>
+          <a class="btn btn-primary btn-small" href="./pricing.html">無料で始める</a>
+          <button class="menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false">
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section feature-hero">
+        <div class="feature-hero-backdrop"></div>
+        <div class="container feature-hero-inner reveal">
+          <h1>機能紹介</h1>
+          <p>
+            保有株・資産推移・配当金をまとめて見られる、シンプルで見やすい資産管理サービス
+          </p>
+        </div>
+      </section>
+
+      <section class="section feature-detail-section">
+        <div class="container feature-detail-grid">
+          <div class="feature-detail-copy reveal">
+            <div class="feature-detail-icon feature-detail-icon-navy"></div>
+            <h2>保有株管理</h2>
+            <p>
+              複数口座の保有銘柄をまとめて一覧化。評価額、取得単価、損益を<br />
+              見やすく整理し、日々の状況確認を短時間で済ませられます。
+            </p>
+            <ul class="feature-check-list">
+              <li>国内・米国株の自動取得対応</li>
+              <li>損益率のグラフィカル表示</li>
+            </ul>
+          </div>
+
+          <div class="feature-stock-card reveal reveal-delay">
+            <div class="feature-table-head">
+              <div class="feature-table-title">
+                <h3>保有株一覧</h3>
+                <p>主要4銘柄の現在値と損益を一覧で確認できます</p>
+              </div>
+              <span class="feature-table-badge">+12.4%</span>
+            </div>
+            <div class="feature-table-wrap">
+              <table class="feature-table">
+                <thead>
+                  <tr>
+                    <th>銘柄名</th>
+                    <th class="is-numeric">
+                      <button class="feature-sort-button" type="button" data-feature-sort="price">
+                        現在値
+                      </button>
+                    </th>
+                    <th class="is-numeric">
+                      <button class="feature-sort-button" type="button" data-feature-sort="change">
+                        前日比
+                      </button>
+                    </th>
+                    <th class="is-numeric">
+                      <button class="feature-sort-button" type="button" data-feature-sort="profit">
+                        損益
+                      </button>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody data-feature-stock-body>
+                  <tr data-price="3420" data-change="1.24" data-profit="24500">
+                    <td>
+                      <div class="feature-stock-name">
+                        <strong>トヨタ自動車</strong>
+                        <span>7203</span>
+                      </div>
+                    </td>
+                    <td class="is-numeric">¥3,420</td>
+                    <td class="is-numeric"><span class="value-pill up">+1.24%</span></td>
+                    <td class="is-numeric"><span class="value-pill up">+¥24,500</span></td>
+                  </tr>
+                  <tr data-price="13800" data-change="3.58" data-profit="89200">
+                    <td>
+                      <div class="feature-stock-name">
+                        <strong>ソニーグループ</strong>
+                        <span>6758</span>
+                      </div>
+                    </td>
+                    <td class="is-numeric">¥13,800</td>
+                    <td class="is-numeric"><span class="value-pill up">+3.58%</span></td>
+                    <td class="is-numeric"><span class="value-pill up">+¥89,200</span></td>
+                  </tr>
+                  <tr data-price="1560" data-change="-0.82" data-profit="-11200">
+                    <td>
+                      <div class="feature-stock-name">
+                        <strong>三菱UFJ FG</strong>
+                        <span>8306</span>
+                      </div>
+                    </td>
+                    <td class="is-numeric">¥1,560</td>
+                    <td class="is-numeric"><span class="value-pill down">-0.82%</span></td>
+                    <td class="is-numeric"><span class="value-pill down">-¥11,200</span></td>
+                  </tr>
+                  <tr data-price="3180" data-change="0.66" data-profit="15000">
+                    <td>
+                      <div class="feature-stock-name">
+                        <strong>オリックス</strong>
+                        <span>8591</span>
+                      </div>
+                    </td>
+                    <td class="is-numeric">¥3,180</td>
+                    <td class="is-numeric"><span class="value-pill up">+0.66%</span></td>
+                    <td class="is-numeric"><span class="value-pill up">+¥15,000</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section asset-graph-section">
+        <div class="container feature-detail-grid feature-detail-grid-reverse">
+          <div class="feature-graph-card reveal">
+            <div class="feature-graph-kpi">
+              <article>
+                <span>総資産</span>
+                <strong>¥12,450,000</strong>
+              </article>
+              <div class="feature-graph-icons">
+                <button class="feature-graph-toggle" type="button" data-feature-range="month">月</button>
+                <button class="feature-graph-toggle is-active" type="button" data-feature-range="year">年</button>
+              </div>
+            </div>
+            <div class="feature-graph-area" data-feature-graph="year">
+              <i class="feature-graph-bar graph-bar-1"></i>
+              <i class="feature-graph-bar graph-bar-2"></i>
+              <i class="feature-graph-bar graph-bar-3"></i>
+              <i class="feature-graph-bar graph-bar-4"></i>
+              <i class="feature-graph-bar graph-bar-5"></i>
+              <i class="feature-graph-bar graph-bar-6"></i>
+            </div>
+            <div class="feature-graph-labels" data-feature-labels>
+              <span>1月</span>
+              <span>2月</span>
+              <span>3月</span>
+              <span>4月</span>
+              <span>5月</span>
+              <span>6月</span>
+            </div>
+          </div>
+
+          <div class="feature-detail-copy reveal reveal-delay">
+            <div class="feature-detail-icon feature-detail-icon-green"></div>
+            <h2>資産推移グラフ</h2>
+            <p>
+              日々の資産変動を直感的に把握できる、視認性の高い推移グラフを用意。<br />
+              ポートフォリオの成長や波をひと目で確認できます。
+            </p>
+            <a class="feature-more-link" href="./index.html#features">詳しく見る</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section dividend-section">
+        <div class="container feature-detail-grid">
+          <div class="feature-detail-copy reveal">
+            <div class="feature-detail-icon feature-detail-icon-sky"></div>
+            <h2>配当金管理</h2>
+            <p>
+              不労所得の見える化を、年間・月別の配当カレンダーで整理。<br />
+              入金済み・予定の配当を切り分けて、将来の収益感を明確にします。
+            </p>
+            <div class="dividend-kpi-grid">
+              <article>
+                <span>年間利回り</span>
+                <strong>3.85%</strong>
+              </article>
+              <article>
+                <span>年間予想配当</span>
+                <strong>¥480,000</strong>
+              </article>
+            </div>
+          </div>
+
+          <div class="dividend-card reveal reveal-delay">
+            <div class="dividend-card-head">
+              <div class="dividend-card-title">
+                <h3>配当カレンダー</h3>
+                <p>年間の入金予定と確定済み配当を一覧で整理できます</p>
+              </div>
+              <div class="dividend-card-status">
+                <span class="status-paid">入金済み</span>
+                <span class="status-estimated">予定</span>
+              </div>
+            </div>
+
+            <div class="dividend-list-wrap">
+              <div class="dividend-list">
+                <article class="dividend-item dividend-item-paid">
+                  <div class="dividend-date">
+                    <strong>24</strong>
+                    <span>3月</span>
+                  </div>
+                  <div class="dividend-meta">
+                    <div class="dividend-meta-top">
+                      <h4>オリックス (8591)</h4>
+                      <span class="dividend-state-badge dividend-state-paid">入金済み</span>
+                    </div>
+                    <p>1株配当 / 100株保有</p>
+                  </div>
+                  <strong class="dividend-amount">+¥15,000</strong>
+                </article>
+
+                <article class="dividend-item dividend-item-estimated">
+                  <div class="dividend-date">
+                    <strong>15</strong>
+                    <span>4月</span>
+                  </div>
+                  <div class="dividend-meta">
+                    <div class="dividend-meta-top">
+                      <h4>日本電信電話 (9432)</h4>
+                      <span class="dividend-state-badge dividend-state-estimated">予定</span>
+                    </div>
+                    <p>期末配当 / 500株保有</p>
+                  </div>
+                  <strong class="dividend-amount">+¥4,800</strong>
+                </article>
+
+                <article class="dividend-item dividend-item-estimated">
+                  <div class="dividend-date">
+                    <strong>08</strong>
+                    <span>5月</span>
+                  </div>
+                  <div class="dividend-meta">
+                    <div class="dividend-meta-top">
+                      <h4>三菱UFJ FG (8306)</h4>
+                      <span class="dividend-state-badge dividend-state-estimated">予定</span>
+                    </div>
+                    <p>中間配当 / 300株保有</p>
+                  </div>
+                  <strong class="dividend-amount">+¥9,600</strong>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section feature-page-cta">
+        <div class="container">
+          <div class="feature-page-cta-panel reveal">
+            <h2>あなたの投資をもっとクリアに</h2>
+            <p>今すぐ登録してあなたに合った見える化された資産管理を始めましょう</p>
+            <div class="cta-actions">
+              <a class="btn btn-primary service-cta-primary" href="./pricing.html">無料で始める</a>
+              <a class="btn btn-outline-light" href="./contact.html">お問い合わせ</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer section" id="contact">
+      <div class="container footer-grid service-footer-grid">
+        <div>
+          <!-- 変更: フッターも新しい画像ロゴに統一 -->
+          <a class="brand site-logo footer-brand footer-logo" href="./index.html" aria-label="Stock Note ホーム">
+            <img src="./assets/logo-stocknote.png" alt="Stock Note" />
+          </a>
+        </div>
+
+        <div class="footer-column">
+          <a href="./index.html#contact">利用規約</a>
+          <a href="./index.html#contact">プライバシーポリシー</a>
+        </div>
+
+        <div class="footer-column">
+          <a href="./index.html#contact">運営会社</a>
+          <a href="./contact.html">ヘルプセンター</a>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <small>&copy; 2024 STOCK NOTE. All Rights Reserved.</small>
+      </div>
+    </footer>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>

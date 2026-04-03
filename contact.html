@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stock Note | お問い合わせ</title>
+  <meta name="description" content="ご不明点やご相談がありましたら、こちらのフォームよりご連絡ください。専門スタッフが丁寧にお答えいたします。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body class="contact-page">
+  <div class="page-shell">
+    <header class="site-header" id="top">
+      <div class="container nav-wrap">
+        <!-- 変更: テキストロゴから画像ロゴへ差し替え -->
+        <a class="brand site-logo" href="./index.html" aria-label="Stock Note ホーム">
+          <img src="./assets/logo-stocknote.png" alt="Stock Note" />
+        </a>
+
+        <nav class="site-nav" aria-label="メインナビゲーション">
+          <a href="./service.html">サービス紹介</a>
+          <a href="./feature.html">機能紹介</a>
+          <a href="./pricing.html">料金</a>
+          <a href="./news.html">お知らせ</a>
+          <a href="./faq.html">FAQ</a>
+          <a href="./contact.html">お問い合わせ</a>
+        </nav>
+
+        <div class="nav-actions">
+          <!-- 変更: ログインページへ遷移 -->
+          <a class="login-link" href="./login.html">ログイン</a>
+          <a class="btn btn-primary btn-small" href="./pricing.html">無料で始める</a>
+          <button class="menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false">
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section contact-hero">
+        <div class="container contact-hero-inner reveal">
+            <h1>お問い合わせ</h1>
+            <p>
+              ご不明点やご相談がありましたら、こちらのフォームよりご連絡ください。<br />
+              専門スタッフが丁寧にお答えいたします。
+            </p>
+          </div>
+        </section>
+
+      <section class="section contact-main-section">
+        <div class="container contact-layout">
+          <section class="contact-form-card reveal">
+              <!-- 改善: フォームを主役として見せるため、見出しと補助文をカード内に追加 -->
+              <div class="contact-form-head">
+                <h2>お問い合わせ内容をお聞かせください</h2>
+                <p class="contact-form-intro">
+                  サービスの使い方、料金、導入前のご相談まで幅広く受け付けています。<br />
+                  内容を確認のうえ、通常24時間以内に担当者よりご連絡します。
+                </p>
+              </div>
+            <form class="contact-form">
+              <div class="contact-field-grid">
+                <label class="contact-field">
+                  <span>お名前</span>
+                  <input type="text" placeholder="山田 太郎" />
+                </label>
+                <label class="contact-field">
+                  <span>メールアドレス</span>
+                  <input type="email" placeholder="example@stocknote.jp" />
+                </label>
+              </div>
+
+              <div class="contact-field">
+                <span>お問い合わせ種別</span>
+                <div class="contact-chip-group">
+                  <label class="contact-chip">
+                    <input type="radio" name="category" checked />
+                    <span>サービスについて</span>
+                  </label>
+                  <label class="contact-chip">
+                    <input type="radio" name="category" />
+                    <span>料金・お支払い</span>
+                  </label>
+                  <label class="contact-chip">
+                    <input type="radio" name="category" />
+                    <span>メディア取材</span>
+                  </label>
+                  <label class="contact-chip">
+                    <input type="radio" name="category" />
+                    <span>その他</span>
+                  </label>
+                </div>
+              </div>
+
+              <label class="contact-field">
+                <span>お問い合わせ内容</span>
+                <textarea rows="8" placeholder="詳細をご記入ください"></textarea>
+              </label>
+
+              <div class="contact-submit-row">
+                <button class="btn btn-primary contact-submit" type="submit">送信内容を確認する</button>
+                <p class="contact-submit-note">営業日内に順次ご返信します。内容によりお時間をいただく場合があります。</p>
+              </div>
+            </form>
+          </section>
+
+          <aside class="contact-side">
+            <!-- 改善: 信頼補強カード -->
+            <section class="contact-side-card contact-support-card reveal">
+              <h2>サポート体制</h2>
+              <div class="support-item">
+                <div class="support-icon support-icon-green"></div>
+                  <div>
+                    <h3>営業時間</h3>
+                    <p>平日 10:00 - 18:00<br />（土日祝休）</p>
+                  </div>
+                </div>
+              <div class="support-item">
+                <div class="support-icon support-icon-blue"></div>
+                <div>
+                  <h3>レスポンス時間</h3>
+                  <p>通常24時間以内に担当者より返信いたします。</p>
+                </div>
+              </div>
+              <div class="support-item">
+                <div class="support-icon support-icon-blue"></div>
+                <div>
+                  <h3>対応内容</h3>
+                  <p>操作方法の確認、料金に関するご相談、導入前のお問い合わせにも対応しています。</p>
+                </div>
+              </div>
+            </section>
+
+            <!-- 改善: 補助導線カード -->
+              <section class="contact-side-card contact-faq-card reveal reveal-delay">
+                <h2>よくあるご質問</h2>
+                <p>お問い合わせの前にFAQもご確認<br />ください。迅速に解決できる場合が<br />あります。</p>
+                <a href="./faq.html">FAQを見る</a>
+              </section>
+
+            <!-- 改善: 装飾カードではなく、意味のある安心材料カードに再設計 -->
+            <section class="contact-side-card contact-process-card reveal reveal-delay-2">
+              <h2>ご案内の流れ</h2>
+              <ol class="contact-process-list">
+                  <li>
+                    <strong><span class="contact-process-number">1</span>内容を確認</strong>
+                    <span>ご入力内容を担当者が確認し、<br />最適な窓口で対応します。</span>
+                  </li>
+                  <li>
+                    <strong><span class="contact-process-number">2</span>担当を振り分け</strong>
+                    <span>内容に応じて、サポート・契約・導入相談の各担当へ引き継ぎます。</span>
+                  </li>
+                  <li>
+                    <strong><span class="contact-process-number">3</span>ご返信</strong>
+                    <span>できるだけ分かりやすく次の行動<br />が分かる形でご案内します。</span>
+                  </li>
+                </ol>
+              </section>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer section" id="contact">
+      <div class="container footer-grid service-footer-grid">
+        <div>
+          <!-- 変更: フッターも新しい画像ロゴに統一 -->
+          <a class="brand site-logo footer-brand footer-logo" href="./index.html" aria-label="Stock Note ホーム">
+            <img src="./assets/logo-stocknote.png" alt="Stock Note" />
+          </a>
+        </div>
+
+        <div class="footer-column">
+          <a href="./contact.html">利用規約</a>
+          <a href="./contact.html">プライバシーポリシー</a>
+        </div>
+
+        <div class="footer-column">
+          <a href="./contact.html">運営会社</a>
+          <a href="./faq.html">ヘルプセンター</a>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <small>&copy; 2024 STOCK NOTE. THE ENLIGHTENED ATELIER.</small>
+      </div>
+    </footer>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>

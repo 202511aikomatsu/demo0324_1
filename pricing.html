@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stock Note | 料金・利用案内</title>
+    <meta
+      name="description"
+      content="Stock Note の料金・利用案内。無理なく始められる料金と使い方。あなたの投資スタイルに合わせて選べる2つのプラン。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body class="pricing-page">
+    <div class="page-shell">
+      <header class="site-header" id="top">
+        <div class="container nav-wrap">
+        <!-- 変更: テキストロゴから画像ロゴへ差し替え -->
+        <a class="brand site-logo" href="./index.html" aria-label="Stock Note ホーム">
+          <img src="./assets/logo-stocknote.png" alt="Stock Note" />
+        </a>
+
+          <nav class="site-nav" aria-label="メインナビゲーション">
+            <a href="./service.html">サービス紹介</a>
+            <a href="./feature.html">機能紹介</a>
+            <a href="./pricing.html">料金</a>
+            <a href="./news.html">お知らせ</a>
+            <a href="./faq.html">FAQ</a>
+            <a href="./contact.html">お問い合わせ</a>
+          </nav>
+
+          <div class="nav-actions">
+          <!-- 変更: ログインページへ遷移 -->
+          <a class="login-link" href="./login.html">ログイン</a>
+            <!-- 変更: 新規登録ページへ遷移 -->
+            <a class="btn btn-primary btn-small" href="./signup.html">無料で始める</a>
+            <button class="menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false">
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="section pricing-hero">
+          <div class="container pricing-hero-inner reveal">
+            <h1>料金・利用案内</h1>
+            <p>無理なく始められる料金と使い方。あなたの投資スタイルに合わせて選べる2つのプラン。</p>
+          </div>
+        </section>
+
+        <section class="section pricing-plan-section">
+          <div class="container pricing-grid">
+            <article class="pricing-card pricing-card-free reveal">
+              <div class="pricing-card-body">
+                <p class="pricing-label">無料プラン</p>
+                <h2>スタンダード</h2>
+                <div class="pricing-price">
+                  <strong>月額 ¥0</strong>
+                </div>
+                <ul class="pricing-feature-list">
+                  <li>最大3つのポートフォリオ管理</li>
+                  <li>リアルタイム株価更新（15分遅延）</li>
+                  <li>基本グラフと配当表示</li>
+                </ul>
+              </div>
+              <!-- 変更: 無料プランCTAを新規登録ページへ接続 -->
+              <a class="btn pricing-card-button pricing-card-button-light" href="./signup.html">無料で始める</a>
+            </article>
+
+            <article class="pricing-card pricing-card-premium reveal reveal-delay">
+              <div class="pricing-popular">一番人気</div>
+              <div class="pricing-card-body">
+                <p class="pricing-label pricing-label-light">プレミアム</p>
+                <h2>プレミアムプラン</h2>
+                <div class="pricing-price pricing-price-light">
+                  <strong>月額 ¥1,980</strong>
+                </div>
+                <ul class="pricing-feature-list pricing-feature-list-light">
+                  <li>リアルタイム株価更新</li>
+                  <li>配当トラッキングの自動化</li>
+                  <li>高機能パフォーマンス分析</li>
+                  <li>ポートフォリオ比較機能</li>
+                  <li>配当カレンダー通知機能</li>
+                  <li>すべての資産推移グラフが閲覧可能</li>
+                </ul>
+              </div>
+              <!-- 変更: プレミアム申込み専用ページへ遷移 -->
+              <a class="btn pricing-card-button pricing-card-button-green" href="./premium-signup.html">プレミアムを利用する</a>
+            </article>
+          </div>
+        </section>
+
+        <section class="section compare-section">
+          <div class="container compare-heading reveal">
+            <h2>機能比較</h2>
+          </div>
+          <div class="container compare-table-card reveal reveal-delay">
+            <table class="compare-table">
+              <thead>
+                <tr>
+                  <th>機能名</th>
+                  <th>無料プラン</th>
+                  <th>プレミアム</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>ウィジェット数</td>
+                  <td>3件まで</td>
+                  <td>無制限</td>
+                </tr>
+                <tr>
+                  <td>株価更新速度</td>
+                  <td>15分ディレイ</td>
+                  <td>リアルタイム</td>
+                </tr>
+                <tr>
+                  <td>AI予測アラート</td>
+                  <td>×</td>
+                  <td>○</td>
+                </tr>
+                <tr>
+                  <td>データ書き出し（CSV）</td>
+                  <td>×</td>
+                  <td>○</td>
+                </tr>
+                <tr>
+                  <td>広告表示</td>
+                  <td>なし</td>
+                  <td>完全非表示</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="section steps-section">
+          <div class="container steps-heading reveal">
+            <h2>使い始めるまでの3ステップ</h2>
+          </div>
+          <div class="container steps-grid">
+            <article class="step-card reveal">
+              <span class="step-number">01</span>
+              <h3>アカウント登録</h3>
+              <p>メールアドレスと基本情報を入力し、<br />数分で利用を開始できます。</p>
+            </article>
+            <article class="step-card step-card-highlight reveal reveal-delay">
+              <span class="step-number">02</span>
+              <h3>銘柄の追加</h3>
+              <p>気になる保有株を追加してポートフォリオ化。資産の流れをすぐ把握できます。</p>
+            </article>
+            <article class="step-card reveal reveal-delay-2">
+              <span class="step-number">03</span>
+              <h3>分析の開始</h3>
+              <p>グラフと配当カレンダーを確認しながら、<br />次の一手を整理できます。</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section pricing-cta-section">
+          <div class="container">
+            <div class="pricing-cta-panel reveal">
+              <h2>さあ、一歩先の投資体験へ</h2>
+              <p>Stock Noteは、あなたの投資判断をより明確にし、より続けやすく整えます。<br />まずは無料プランからその使いやすさを体感してください。</p>
+              <div class="cta-actions">
+                <!-- 変更: ページ下部CTAも新規登録ページへ遷移 -->
+                <a class="btn btn-primary" href="./signup.html">無料で始める</a>
+                <a class="btn btn-secondary pricing-secondary" href="./contact.html">お問い合わせ</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer section" id="contact">
+        <div class="container footer-grid service-footer-grid">
+          <div>
+          <!-- 変更: フッターも新しい画像ロゴに統一 -->
+          <a class="brand site-logo footer-brand footer-logo" href="./index.html" aria-label="Stock Note ホーム">
+            <img src="./assets/logo-stocknote.png" alt="Stock Note" />
+          </a>
+          </div>
+
+          <div class="footer-column">
+            <a href="./index.html#contact">利用規約</a>
+            <a href="./index.html#contact">プライバシーポリシー</a>
+          </div>
+
+          <div class="footer-column">
+            <a href="./index.html#contact">運営会社</a>
+            <a href="./contact.html">ヘルプセンター</a>
+          </div>
+        </div>
+
+        <div class="container footer-bottom">
+          <small>&copy; 2024 STOCK NOTE. All Rights Reserved.</small>
+        </div>
+      </footer>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

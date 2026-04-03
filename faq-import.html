@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stock Note | データのインポート</title>
+  <meta name="description" content="Stock Note のデータインポートに関するFAQ一覧です。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body class="faq-page">
+  <div class="page-shell">
+    <header class="site-header" id="top">
+      <div class="container nav-wrap">
+        <!-- 変更: テキストロゴから画像ロゴへ差し替え -->
+        <a class="brand site-logo" href="./index.html" aria-label="Stock Note ホーム">
+          <img src="./assets/logo-stocknote.png" alt="Stock Note" />
+        </a>
+        <nav class="site-nav" aria-label="メインナビゲーション">
+          <a href="./service.html">サービス紹介</a>
+          <a href="./feature.html">機能紹介</a>
+          <a href="./pricing.html">料金</a>
+          <a href="./news.html">お知らせ</a>
+          <a href="./faq.html">FAQ</a>
+          <a href="./contact.html">お問い合わせ</a>
+        </nav>
+        <div class="nav-actions">
+          <!-- 変更: ログインページへ遷移 -->
+          <a class="login-link" href="./login.html">ログイン</a>
+          <a class="btn btn-primary btn-small" href="./pricing.html">無料で始める</a>
+          <button class="menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false">
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section faq-hero">
+        <div class="container faq-hero-inner reveal">
+          <h1>データのインポート</h1>
+          <p>保有株データや取引情報の取り込みに関するFAQ一覧です</p>
+        </div>
+      </section>
+
+      <section class="section faq-main-section">
+        <div class="container faq-search-wrap reveal">
+          <label class="faq-search-box" aria-label="データインポートFAQをキーワード検索">
+            <span class="news-search-icon" aria-hidden="true"></span>
+            <input type="search" placeholder="キーワードで検索する" data-faq-search />
+          </label>
+        </div>
+
+        <div class="container faq-layout">
+          <div class="faq-main-column">
+            <article class="faq-card reveal" data-faq-item data-faq-keywords="保有株 手動 登録 銘柄コード">
+              <div class="faq-qmark">Q.</div>
+              <div class="faq-card-body">
+                <h2>保有株データは手動で登録できますか？</h2>
+                <p>
+                  はい、銘柄コード、保有数量、取得単価などを手動で入力して登録できます。<br />
+                  少量の保有銘柄を管理したい場合にも便利です。
+                </p>
+              </div>
+            </article>
+
+            <article class="faq-card reveal reveal-delay" data-faq-item data-faq-keywords="CSV インポート フォーマット">
+              <div class="faq-qmark">Q.</div>
+              <div class="faq-card-body">
+                <h2>CSVインポートに対応していますか？</h2>
+                <p>
+                  対応しています。所定のCSVフォーマットに沿ってアップロードすると、<br />
+                  一括で保有データを取り込めます。
+                </p>
+              </div>
+            </article>
+
+            <article class="faq-card reveal reveal-delay-2" data-faq-item data-faq-keywords="証券口座 取り込み CSV">
+              <div class="faq-qmark">Q.</div>
+              <div class="faq-card-body">
+                <h2>証券口座データの取り込み方法は？</h2>
+                <p>CSVダウンロードに対応している証券会社の場合、出力したファイルを取り込めます。対応形式はインポート画面でご確認ください。</p>
+              </div>
+            </article>
+
+            <article class="faq-card reveal" data-faq-item data-faq-keywords="インポート 失敗 エラー">
+              <div class="faq-qmark">Q.</div>
+              <div class="faq-card-body">
+                <h2>インポートに失敗した場合はどうすればよいですか？</h2>
+                <p>エラー内容が表示されるので、項目名や日付形式、銘柄コードなどをご確認ください。必要に応じてサンプルCSVも参照できます。</p>
+              </div>
+            </article>
+
+            <article class="faq-card reveal reveal-delay" data-faq-item data-faq-keywords="重複 データ 判定 二重登録">
+              <div class="faq-qmark">Q.</div>
+              <div class="faq-card-body">
+                <h2>重複データは自動で判定されますか？</h2>
+                <p>
+                  一定条件で重複候補を検出し、取り込み前に確認できる仕組みがあります。<br />
+                  意図しない二重登録を防ぎやすくなっています。
+                </p>
+              </div>
+            </article>
+
+            <p class="faq-empty-state" data-faq-empty hidden>
+              該当するご質問は見つかりませんでした。別のキーワードでお試しください。
+            </p>
+          </div>
+
+          <aside class="faq-side-column">
+            <section class="faq-side-card reveal">
+              <h3>カテゴリーナビ</h3>
+              <nav class="faq-page-nav" aria-label="FAQカテゴリーページ">
+                <a href="./faq-account.html">登録・ログインについて</a>
+                <a href="./faq-pricing.html">料金プランと契約内容</a>
+                <a class="is-active" href="./faq-import.html">データのインポート</a>
+                <a href="./faq-notification.html">通知設定について</a>
+              </nav>
+            </section>
+
+            <section class="faq-side-card reveal reveal-delay">
+              <h3>FAQトップへ</h3>
+              <p class="faq-category-intro">キーワード検索やカテゴリ横断で探したい場合は、FAQトップページからご確認ください。</p>
+              <a class="faq-top-link" href="./faq.html">FAQトップを見る</a>
+            </section>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer section">
+      <div class="container footer-grid">
+        <div>
+          <!-- 変更: フッターも新しい画像ロゴに統一 -->
+          <a class="brand site-logo footer-brand footer-logo" href="./index.html" aria-label="Stock Note ホーム">
+            <img src="./assets/logo-stocknote.png" alt="Stock Note" />
+          </a>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <small>&copy; Stock Note All Rights Reserved.</small>
+      </div>
+    </footer>
+  </div>
+  <script src="./script.js"></script>
+</body>
+
+</html>

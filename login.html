@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stock Note | ログイン</title>
+  <meta name="description" content="アカウントにログインして、保有株や配当情報を確認できます。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body class="login-page">
+  <div class="page-shell">
+    <header class="site-header" id="top">
+      <div class="container nav-wrap">
+        <!-- 変更: テキストロゴから画像ロゴへ差し替え -->
+        <a class="brand site-logo" href="./index.html" aria-label="Stock Note ホーム">
+          <img src="./assets/logo-stocknote.png" alt="Stock Note" />
+        </a>
+
+        <nav class="site-nav" aria-label="メインナビゲーション">
+          <a href="./service.html">サービス紹介</a>
+          <a href="./feature.html">機能紹介</a>
+          <a href="./pricing.html">料金</a>
+          <a href="./news.html">お知らせ</a>
+          <a href="./faq.html">FAQ</a>
+          <a href="./contact.html">お問い合わせ</a>
+        </nav>
+
+        <div class="nav-actions">
+          <!-- 追加: ログインページ自身への導線 -->
+          <a class="login-link" href="./login.html">ログイン</a>
+          <a class="btn btn-primary btn-small" href="./pricing.html">無料で始める</a>
+          <button class="menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false">
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="login-main">
+      <div class="login-shell">
+        <section class="login-panel reveal">
+          <div class="login-panel-body">
+            <div class="login-header">
+              <h1>ログイン</h1>
+              <p>アカウントにログインして、保有株や配当情報を確認できます</p>
+            </div>
+
+            <form class="login-form">
+              <label class="login-field">
+                <span>メールアドレス</span>
+                <input type="email" placeholder="example@stocknote.jp" />
+              </label>
+
+              <label class="login-field">
+                <span>パスワード</span>
+                <input type="password" placeholder="パスワードを入力" />
+              </label>
+
+              <div class="login-options">
+                <label class="login-check">
+                  <input type="checkbox" />
+                  <span>ログイン状態を保持する</span>
+                </label>
+                <a class="login-inline-link" href="./contact.html">パスワードを忘れた方</a>
+              </div>
+
+              <button class="btn btn-primary login-submit" type="submit">ログインする</button>
+
+              <div class="login-links">
+                <!-- 変更: 新規登録ページへ遷移 -->
+                <a href="./signup.html">新規登録はこちら</a>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <aside class="login-side">
+          <section class="login-side-card reveal">
+            <h2>ログイン後にできること</h2>
+            <ul class="login-feature-list">
+              <li>
+                <h3>保有株の一覧を確認</h3>
+                <p>保有銘柄や評価額をひとつの画面で見やすく確認できます。</p>
+              </li>
+              <li>
+                <h3>配当情報をまとめて管理</h3>
+                <p>受取予定や入金済みの配当情報を、時系列で整理して追えます。</p>
+              </li>
+              <li>
+                <h3>資産推移をすぐに把握</h3>
+                <p>期間別のグラフで、資産全体の変化を落ち着いて確認できます。</p>
+              </li>
+            </ul>
+          </section>
+
+          <section class="login-side-card reveal reveal-delay">
+            <h2>はじめての方へ</h2>
+            <p>まずはサービス内容や料金をご確認ください。使い方や導入前のご質問も、お問い合わせフォームから受け付けています。</p>
+            <a class="login-sub-link" href="./service.html">サービス紹介を見る</a>
+          </section>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="site-footer section" id="contact">
+      <div class="container footer-grid service-footer-grid">
+        <div>
+          <!-- 変更: フッターも新しい画像ロゴに統一 -->
+          <a class="brand site-logo footer-brand footer-logo" href="./index.html" aria-label="Stock Note ホーム">
+            <img src="./assets/logo-stocknote.png" alt="Stock Note" />
+          </a>
+        </div>
+
+        <div class="footer-column">
+          <a href="./contact.html">利用規約</a>
+          <a href="./contact.html">プライバシーポリシー</a>
+        </div>
+
+        <div class="footer-column">
+          <a href="./contact.html">運営会社</a>
+          <a href="./faq.html">ヘルプセンター</a>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <small>&copy; 2024 STOCK NOTE. THE ENLIGHTENED ATELIER.</small>
+      </div>
+    </footer>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>

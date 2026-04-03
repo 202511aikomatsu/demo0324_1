@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stock Note | 機能・使い方</title>
+  <meta name="description" content="Stock Note の機能・使い方に関するFAQ一覧です。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body class="faq-page faq-detail-page">
+  <div class="page-shell">
+    <header class="site-header" id="top">
+      <div class="container nav-wrap">
+        <!-- 変更: テキストロゴから画像ロゴへ差し替え -->
+        <a class="brand site-logo" href="./index.html" aria-label="Stock Note ホーム">
+          <img src="./assets/logo-stocknote.png" alt="Stock Note" />
+        </a>
+        <nav class="site-nav" aria-label="メインナビゲーション">
+          <a href="./service.html">サービス紹介</a>
+          <a href="./feature.html">機能紹介</a>
+          <a href="./pricing.html">料金</a>
+          <a href="./news.html">お知らせ</a>
+          <a href="./faq.html">FAQ</a>
+          <a href="./contact.html">お問い合わせ</a>
+        </nav>
+        <div class="nav-actions">
+          <!-- 変更: ログインページへ遷移 -->
+          <a class="login-link" href="./login.html">ログイン</a>
+          <a class="btn btn-primary btn-small" href="./pricing.html">無料で始める</a>
+          <button class="menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false">
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="faq-detail-main">
+      <section class="section faq-hero">
+        <div class="faq-detail-container">
+          <div class="faq-detail-hero reveal">
+            <h1 class="faq-hero__title">機能・使い方</h1>
+            <p class="faq-hero__desc">Stock Note の主な機能や日々の使い方に関するFAQ一覧です</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section faq-main-section">
+        <div class="faq-detail-container faq-detail-content">
+          <div class="faq-search-wrap reveal">
+            <label class="faq-search-box faq-search" aria-label="機能・使い方FAQをキーワード検索">
+              <span class="news-search-icon" aria-hidden="true"></span>
+              <input type="search" placeholder="キーワードで検索する" data-faq-search />
+            </label>
+          </div>
+
+          <div class="faq-layout faq-detail-layout">
+            <div class="faq-main-column faq-main">
+              <article class="faq-card reveal" data-faq-item data-faq-keywords="保有株 登録 銘柄">
+                <div class="faq-qmark">Q.</div>
+                <div class="faq-card-body">
+                  <h2>保有株はどこから登録できますか？</h2>
+                  <p>ポートフォリオ画面の「銘柄を追加」から登録できます。手入力のほか、CSVインポートにも対応しています。</p>
+                </div>
+              </article>
+
+            <article class="faq-card reveal reveal-delay" data-faq-item data-faq-keywords="配当カレンダー 確認 配当">
+              <div class="faq-qmark">Q.</div>
+              <div class="faq-card-body">
+                <h2>配当カレンダーはどこで確認できますか？</h2>
+                <p>配当メニュー内のカレンダータブから確認できます。予定日と入金済みの配当を見分けやすい一覧でご覧いただけます。</p>
+              </div>
+            </article>
+
+            <article class="faq-card reveal reveal-delay-2" data-faq-item data-faq-keywords="資産推移 グラフ 期間">
+              <div class="faq-qmark">Q.</div>
+              <div class="faq-card-body">
+                <h2>資産推移グラフはどの期間で見られますか？</h2>
+                <p>1か月、1年、全期間など複数の表示期間を切り替えられます。短期の変化と長期の推移を同じ画面で確認できます。</p>
+              </div>
+            </article>
+
+            <article class="faq-card reveal" data-faq-item data-faq-keywords="並び替え ソート 保有銘柄">
+              <div class="faq-qmark">Q.</div>
+              <div class="faq-card-body">
+                <h2>保有銘柄の並び替えはできますか？</h2>
+                <p>可能です。評価額、損益率、保有比率などの条件で並び替えられるため、見たい順番ですぐに確認できます。</p>
+              </div>
+            </article>
+
+            <article class="faq-card reveal reveal-delay" data-faq-item data-faq-keywords="ポートフォリオ 比較 機能">
+              <div class="faq-qmark">Q.</div>
+              <div class="faq-card-body">
+                <h2>ポートフォリオ比較機能はありますか？</h2>
+                <p>あります。期間ごとの構成比や推移を比較しながら確認できるため、リバランスの判断にも役立ちます。</p>
+              </div>
+            </article>
+
+              <p class="faq-empty-state" data-faq-empty hidden>該当するご質問は見つかりませんでした。別のキーワードでお試しください。</p>
+            </div>
+
+            <aside class="faq-side-column faq-sidebar">
+              <section class="faq-side-card sidebar-card reveal">
+                <h3>カテゴリーナビ</h3>
+                <nav class="faq-page-nav category-nav" aria-label="FAQカテゴリーページ">
+                  <a class="category-nav__link" href="./faq-account.html">アカウント・契約</a>
+                  <a class="category-nav__link is-active" href="./faq-feature.html">機能・使い方</a>
+                  <a class="category-nav__link" href="./faq-security.html">セキュリティ</a>
+                  <a class="category-nav__link" href="./faq-payment.html">お支払い</a>
+                </nav>
+              </section>
+
+            <section class="faq-side-card sidebar-card reveal reveal-delay">
+              <h3>FAQトップへ</h3>
+              <p class="faq-category-intro">カテゴリ横断で探したい場合は、FAQトップページの検索もあわせてご活用ください。</p>
+              <a class="faq-top-link" href="./faq.html">FAQトップを見る</a>
+              </section>
+            </aside>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer section">
+      <div class="container footer-grid">
+        <div>
+          <!-- 変更: フッターも新しい画像ロゴに統一 -->
+          <a class="brand site-logo footer-brand footer-logo" href="./index.html" aria-label="Stock Note ホーム">
+            <img src="./assets/logo-stocknote.png" alt="Stock Note" />
+          </a>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <small>&copy; Stock Note All Rights Reserved.</small>
+      </div>
+    </footer>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
