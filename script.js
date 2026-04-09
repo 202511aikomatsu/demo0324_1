@@ -10,6 +10,15 @@ const holdingsList = document.querySelector(".holdings-panel [data-holdings-list
 const featureGraphToggles = document.querySelectorAll("[data-feature-range]");
 const featureGraphArea = document.querySelector("[data-feature-graph]");
 const featureGraphLabels = document.querySelector("[data-feature-labels]");
+const assetGraphRangeTabs = document.querySelectorAll("[data-asset-graph-range]");
+const assetGraphTotal = document.querySelector("[data-asset-graph-total]");
+const assetGraphChange = document.querySelector("[data-asset-graph-change]");
+const assetGraphHighlight = document.querySelector("[data-asset-graph-highlight]");
+const assetGraphNote = document.querySelector("[data-asset-graph-note]");
+const assetGraphLine = document.querySelector("[data-asset-graph-line]");
+const assetGraphArea = document.querySelector("[data-asset-graph-area]");
+const assetGraphPoints = document.querySelector("[data-asset-graph-points]");
+const assetGraphLabels = document.querySelector("[data-asset-graph-labels]");
 
 const featureSortButtons = document.querySelectorAll("[data-feature-sort]");
 const featureStockBody = document.querySelector("[data-feature-stock-body]");
@@ -18,6 +27,9 @@ const newsFilterButtons = document.querySelectorAll("[data-news-filter]");
 const newsCards = document.querySelectorAll("[data-news-category]");
 const newsPageButtons = document.querySelectorAll("[data-news-page]");
 const newsPageActions = document.querySelectorAll("[data-news-page-action]");
+const newsSearchForm = document.querySelector(".news-search");
+const newsSearchInput = document.querySelector('.news-search input[name="q"]');
+const newsPagination = document.querySelector(".news-pagination");
 
 const faqSearchInput = document.querySelector("[data-faq-search]");
 const faqItems = document.querySelectorAll("[data-faq-item]");
@@ -26,6 +38,7 @@ const faqFilterButtons = document.querySelectorAll("[data-faq-filter]");
 
 const NEWS_ITEMS_PER_PAGE = 3;
 let activeNewsFilter = "all";
+let activeNewsKeyword = "";
 let currentNewsPage = 1;
 let activeFaqFilter = "all";
 
@@ -94,6 +107,60 @@ const featureGraphData = {
   year: {
     bars: ["26%", "34%", "46%", "58%", "72%", "84%"],
     labels: ["2021", "2022", "2023", "2024", "2025", "2026"],
+  },
+};
+
+const assetGraphShowcaseData = {
+  day: {
+    total: "¥18,452,000",
+    change: "+¥42,000",
+    highlight: "本日 15:20",
+    note: "相場上昇を反映",
+    labels: ["09:00", "10:30", "12:00", "13:30", "15:00", "引け後"],
+    points: [
+      [18, 214],
+      [96, 202],
+      [174, 208],
+      [252, 188],
+      [330, 176],
+      [408, 168],
+      [486, 156],
+      [564, 146],
+    ],
+  },
+  month: {
+    total: "¥18,420,000",
+    change: "+¥286,000",
+    highlight: "今月 2回",
+    note: "配当入金を反映",
+    labels: ["1週目", "2週目", "3週目", "4週目", "5週目", "月末"],
+    points: [
+      [18, 225],
+      [96, 208],
+      [174, 198],
+      [252, 183],
+      [330, 170],
+      [408, 148],
+      [486, 128],
+      [564, 102],
+    ],
+  },
+  year: {
+    total: "¥18,420,000",
+    change: "+¥2,380,000",
+    highlight: "最高値 2026.03",
+    note: "年初来の積み上がり",
+    labels: ["4月", "6月", "8月", "10月", "12月", "3月"],
+    points: [
+      [18, 236],
+      [96, 228],
+      [174, 212],
+      [252, 194],
+      [330, 174],
+      [408, 152],
+      [486, 118],
+      [564, 88],
+    ],
   },
 };
 
@@ -378,6 +445,54 @@ const applyFeatureGraphRange = (range) => {
   });
 };
 
+const formatAssetGraphPath = (points, closeArea = false) => {
+  if (!points?.length) return "";
+
+  const [firstX, firstY] = points[0];
+  const linePath = [`M ${firstX} ${firstY}`];
+
+  points.slice(1).forEach(([x, y]) => {
+    linePath.push(`L ${x} ${y}`);
+  });
+
+  if (!closeArea) {
+    return linePath.join(" ");
+  }
+
+  const [lastX] = points[points.length - 1];
+  linePath.push(`L ${lastX} 252`, `L ${firstX} 252 Z`);
+  return linePath.join(" ");
+};
+
+const applyAssetGraphRange = (range) => {
+  const config = assetGraphShowcaseData[range];
+  if (!config || !assetGraphLine || !assetGraphArea) return;
+
+  if (assetGraphTotal) assetGraphTotal.textContent = config.total;
+  if (assetGraphChange) assetGraphChange.textContent = config.change;
+  if (assetGraphHighlight) assetGraphHighlight.textContent = config.highlight;
+  if (assetGraphNote) assetGraphNote.textContent = config.note;
+
+  assetGraphLine.setAttribute("d", formatAssetGraphPath(config.points));
+  assetGraphArea.setAttribute("d", formatAssetGraphPath(config.points, true));
+
+  if (assetGraphPoints) {
+    assetGraphPoints.innerHTML = config.points
+      .map(([x, y]) => `<circle cx="${x}" cy="${y}" r="5"></circle>`)
+      .join("");
+  }
+
+  if (assetGraphLabels) {
+    assetGraphLabels.innerHTML = config.labels.map((label) => `<span>${label}</span>`).join("");
+  }
+
+  assetGraphRangeTabs.forEach((button) => {
+    const isActive = button.dataset.assetGraphRange === range;
+    button.classList.toggle("is-active", isActive);
+    button.setAttribute("aria-pressed", String(isActive));
+  });
+};
+
 const sortFeatureStocks = (key) => {
   if (!featureStockBody || !key) return;
 
@@ -394,12 +509,46 @@ const sortFeatureStocks = (key) => {
   });
 };
 
+const getNewsEmptyState = () => {
+  const newsList = document.querySelector("[data-news-list]");
+  if (!newsList) return null;
+
+  let emptyState = newsList.querySelector("[data-news-empty]");
+  if (emptyState) return emptyState;
+
+  emptyState = document.createElement("div");
+  emptyState.className = "news-empty-state";
+  emptyState.dataset.newsEmpty = "true";
+  emptyState.hidden = true;
+  emptyState.innerHTML =
+    "<h2>該当するお知らせが見つかりませんでした</h2><p>別のキーワードを試すか、カテゴリを「すべて」に切り替えてご確認ください。</p>";
+
+  if (newsPagination?.parentElement === newsList) {
+    newsList.insertBefore(emptyState, newsPagination);
+  } else {
+    newsList.appendChild(emptyState);
+  }
+
+  return emptyState;
+};
+
 const renderNewsCards = () => {
   if (!newsCards.length) return;
 
   const filteredCards = [...newsCards].filter((card) => {
-    return activeNewsFilter === "all" || card.dataset.newsCategory === activeNewsFilter;
+    const matchesCategory =
+      activeNewsFilter === "all" || card.dataset.newsCategory === activeNewsFilter;
+    const normalizedKeyword = activeNewsKeyword.trim().toLowerCase();
+    const matchesKeyword =
+      !normalizedKeyword || card.textContent.toLowerCase().includes(normalizedKeyword);
+
+    return matchesCategory && matchesKeyword;
   });
+
+  const emptyState = getNewsEmptyState();
+  if (emptyState) {
+    emptyState.hidden = filteredCards.length > 0;
+  }
 
   const totalPages = Math.max(1, Math.ceil(filteredCards.length / NEWS_ITEMS_PER_PAGE));
   currentNewsPage = Math.min(Math.max(currentNewsPage, 1), totalPages);
@@ -435,10 +584,20 @@ const renderNewsCards = () => {
     button.classList.toggle("is-disabled", shouldDisable);
     button.disabled = shouldDisable;
   });
+
+  if (newsPagination) {
+    newsPagination.hidden = filteredCards.length === 0;
+  }
 };
 
 const applyNewsFilter = (filter) => {
   activeNewsFilter = filter;
+  currentNewsPage = 1;
+  renderNewsCards();
+};
+
+const applyNewsKeyword = (keyword = "") => {
+  activeNewsKeyword = keyword;
   currentNewsPage = 1;
   renderNewsCards();
 };
@@ -626,6 +785,12 @@ featureGraphToggles.forEach((button) => {
   });
 });
 
+assetGraphRangeTabs.forEach((button) => {
+  button.addEventListener("click", () => {
+    applyAssetGraphRange(button.dataset.assetGraphRange || "month");
+  });
+});
+
 featureSortButtons.forEach((button) => {
   button.addEventListener("click", () => {
     sortFeatureStocks(button.dataset.featureSort);
@@ -656,6 +821,19 @@ newsPageActions.forEach((button) => {
   });
 });
 
+if (newsSearchForm) {
+  newsSearchForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    applyNewsKeyword(newsSearchInput?.value || "");
+  });
+}
+
+if (newsSearchInput) {
+  newsSearchInput.addEventListener("input", (event) => {
+    applyNewsKeyword(event.target.value);
+  });
+}
+
 if (faqSearchInput) {
   faqSearchInput.addEventListener("input", (event) => {
     filterFaqItems(event.target.value);
@@ -678,6 +856,12 @@ window.addEventListener("resize", () => {
 syncHeaderState();
 applyChartRange(chartArea?.dataset.chartRange || "year");
 applyFeatureGraphRange(featureGraphArea?.dataset.featureGraph || "year");
-if (newsCards.length) applyNewsFilter("all");
+applyAssetGraphRange("month");
+if (newsCards.length) {
+  const initialNewsKeyword = new URLSearchParams(window.location.search).get("q") || "";
+  if (newsSearchInput) newsSearchInput.value = initialNewsKeyword;
+  activeNewsKeyword = initialNewsKeyword;
+  applyNewsFilter("all");
+}
 if (faqItems.length) filterFaqItems("");
 renderFaqApp();
