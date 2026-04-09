@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stock Note | 資産推移グラフ</title>
+  <meta name="description"
+    content="Stock Note の資産推移グラフ機能。日々の資産変動を見える化し、前月比や年初来推移を落ち着いたUIで確認できる詳細ページです。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body class="asset-graph-page">
+  <div class="page-shell">
+    <header class="site-header" id="top">
+      <div class="container nav-wrap">
+        <a class="brand site-logo" href="./index.html" aria-label="Stock Note ホーム">
+          <img src="./assets/logo-stocknote.png" alt="Stock Note" />
+        </a>
+
+        <nav class="site-nav" aria-label="メインナビゲーション">
+          <a href="./service.html">サービス紹介</a>
+          <a href="./feature.html">機能紹介</a>
+          <a href="./pricing.html">料金</a>
+          <a href="./news.html">お知らせ</a>
+          <a href="./faq.html">FAQ</a>
+          <a href="./contact.html">お問い合わせ</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a class="login-link" href="./login.html">ログイン</a>
+          <a class="btn btn-primary btn-small" href="./pricing.html">無料で始める</a>
+          <button class="menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false">
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- 新規追加: 資産推移グラフ 詳細ページ ファーストビュー -->
+      <section class="section asset-graph-hero">
+        <div class="asset-graph-hero-backdrop"></div>
+        <div class="container asset-graph-hero-grid">
+          <div class="asset-graph-hero-copy reveal">
+            <h1>資産推移グラフ</h1>
+            <p class="asset-graph-lead">
+              日々の資産変動を直感的に把握できる、視認性の高い推移グラフを用意。ポートフォリオの成長や波をひと目で確認できます。
+            </p>
+            <div class="asset-graph-hero-actions">
+              <a class="btn btn-primary" href="./pricing.html">無料で始める</a>
+              <a class="btn btn-secondary asset-graph-secondary" href="./feature.html">機能一覧に戻る</a>
+            </div>
+          </div>
+
+          <div class="asset-graph-showcase reveal reveal-delay">
+            <article class="asset-graph-showcase-card">
+              <div class="asset-graph-showcase-head">
+                <div>
+                  <p>総資産の見える化</p>
+                  <h2 data-asset-graph-total>¥18,420,000</h2>
+                </div>
+                <div class="asset-graph-range-tabs" aria-label="表示期間">
+                  <button class="asset-graph-range-tab" type="button" data-asset-graph-range="day">日</button>
+                  <button class="asset-graph-range-tab is-active" type="button" data-asset-graph-range="month">月</button>
+                  <button class="asset-graph-range-tab" type="button" data-asset-graph-range="year">年</button>
+                </div>
+              </div>
+
+              <div class="asset-graph-summary-row">
+                <article>
+                  <span>前期間比</span>
+                  <strong data-asset-graph-change>+¥286,000</strong>
+                </article>
+                <article>
+                  <span>高値更新</span>
+                  <strong data-asset-graph-highlight>今月 2回</strong>
+                </article>
+                <article>
+                  <span>メモ</span>
+                  <strong data-asset-graph-note>配当入金を反映</strong>
+                </article>
+              </div>
+
+              <!-- 新規追加: 静的UIのサンプルグラフ。script.js で文言と線を切り替え -->
+              <div class="asset-graph-chart-shell">
+                <div class="asset-graph-chart-grid" aria-hidden="true">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <svg class="asset-graph-chart" viewBox="0 0 600 280" role="img"
+                  aria-label="資産推移グラフのサンプル表示">
+                  <defs>
+                    <linearGradient id="assetGraphStroke" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stop-color="#7ab6ff" />
+                      <stop offset="100%" stop-color="#1657c3" />
+                    </linearGradient>
+                    <linearGradient id="assetGraphFill" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stop-color="#4f8aff" stop-opacity="0.28" />
+                      <stop offset="100%" stop-color="#4f8aff" stop-opacity="0" />
+                    </linearGradient>
+                  </defs>
+                  <path class="asset-graph-area-fill" data-asset-graph-area
+                    d="M 18 225 L 96 208 L 174 198 L 252 183 L 330 170 L 408 148 L 486 128 L 564 102 L 564 252 L 18 252 Z">
+                  </path>
+                  <path class="asset-graph-line" data-asset-graph-line
+                    d="M 18 225 L 96 208 L 174 198 L 252 183 L 330 170 L 408 148 L 486 128 L 564 102"></path>
+                  <g class="asset-graph-points" data-asset-graph-points>
+                    <circle cx="18" cy="225" r="5"></circle>
+                    <circle cx="96" cy="208" r="5"></circle>
+                    <circle cx="174" cy="198" r="5"></circle>
+                    <circle cx="252" cy="183" r="5"></circle>
+                    <circle cx="330" cy="170" r="5"></circle>
+                    <circle cx="408" cy="148" r="5"></circle>
+                    <circle cx="486" cy="128" r="5"></circle>
+                    <circle cx="564" cy="102" r="5"></circle>
+                  </g>
+                </svg>
+                <div class="asset-graph-axis-labels" data-asset-graph-labels>
+                  <span>1週目</span>
+                  <span>2週目</span>
+                  <span>3週目</span>
+                  <span>4週目</span>
+                  <span>5週目</span>
+                  <span>月末</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 新規追加: この機能でできること -->
+      <section class="section asset-graph-capabilities">
+        <div class="container">
+          <div class="asset-graph-section-heading reveal">
+            <p>この機能でできること</p>
+            <h2>確認の負担を減らしながら、変化の流れをつかむ</h2>
+          </div>
+
+          <div class="asset-graph-capability-grid">
+            <article class="asset-graph-capability-card reveal">
+              <div class="asset-graph-mini-icon asset-graph-mini-icon-image" aria-hidden="true">
+                <img src="./assets/asset-graph-calendar-future.png" alt="" />
+              </div>
+              <h3>日次・月次での資産変動を可視化</h3>
+              <p>毎日の上下も、月単位の推移も、同じ視点で落ち着いて確認。忙しい日でも今の位置をすぐ把握できます。</p>
+            </article>
+
+            <article class="asset-graph-capability-card reveal reveal-delay">
+              <div class="asset-graph-mini-icon asset-graph-mini-icon-image" aria-hidden="true">
+                <img src="./assets/asset-graph-finance-future.png" alt="" />
+              </div>
+              <h3>資産の成長推移を振り返れる</h3>
+              <p>一時的な値動きだけでなく、積み上がってきた変化を線で確認。長い目で見た成長を見失いにくくなります。</p>
+            </article>
+
+            <article class="asset-graph-capability-card reveal reveal-delay-2">
+              <div class="asset-graph-mini-icon asset-graph-mini-icon-image" aria-hidden="true">
+                <img src="./assets/asset-graph-motivation-future.png" alt="" />
+              </div>
+              <h3>長期投資のモチベーション維持につながる</h3>
+              <p>入金や配当、相場変動の積み重ねが見えることで、続けてきた投資行動を前向きに振り返りやすくなります。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 新規追加: ダッシュボード風の見せ方 -->
+      <section class="section asset-graph-insight-section">
+        <div class="container asset-graph-insight-layout">
+          <div class="asset-graph-insight-copy reveal">
+            <p class="asset-graph-section-kicker">グラフで見えること</p>
+            <h2>数字を追いすぎず、流れで判断できる設計</h2>
+            <p>
+              前月比や年初来推移、高値更新のタイミングなど、あとから振り返りたい情報を見やすく整理。
+              配当や入金がどのように資産の線へ反映されたかも、自然に把握できます。
+            </p>
+          </div>
+
+          <div class="asset-graph-insight-grid">
+            <article class="asset-graph-insight-card reveal">
+              <span class="asset-graph-insight-label">前月比</span>
+              <strong>+2.6%</strong>
+              <p>月の途中の振れを含めて、最終的な着地点をひと目で確認できます。</p>
+            </article>
+
+            <article class="asset-graph-insight-card reveal reveal-delay">
+              <span class="asset-graph-insight-label">年初来推移</span>
+              <strong>+14.8%</strong>
+              <p>短期のノイズに引っ張られず、今年の成長ペースを落ち着いて見返せます。</p>
+            </article>
+
+            <article class="asset-graph-insight-card reveal reveal-delay-2">
+              <span class="asset-graph-insight-label">高値更新タイミング</span>
+              <strong>2026.03.28</strong>
+              <p>どの時点で資産が伸びたかが分かるため、相場と行動の関係を振り返りやすくなります。</p>
+            </article>
+
+            <article class="asset-graph-insight-card reveal">
+              <span class="asset-graph-insight-label">配当・入金反映</span>
+              <strong>+¥124,000</strong>
+              <p>現金の積み上がりがどう全体に効いたかを、折れ線の変化として自然に確認できます。</p>
+            </article>
+
+            <article class="asset-graph-insight-card asset-graph-insight-card-wide reveal reveal-delay">
+              <span class="asset-graph-insight-label">投資行動を振り返るヒント</span>
+              <strong>「いつ、何が効いたか」を残しやすい</strong>
+              <p>相場が大きく動いた日や買い増しの後に資産がどう推移したかを見返すことで、今後の判断材料を落ち着いて整理できます。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 新規追加: 利用シーン -->
+      <section class="section asset-graph-usage-section">
+        <div class="container">
+          <div class="asset-graph-section-heading reveal">
+            <p>利用イメージ</p>
+            <h2>忙しい日常の中でも、必要なタイミングで確認しやすい</h2>
+          </div>
+
+          <div class="asset-graph-usage-grid">
+            <article class="asset-graph-usage-card reveal">
+              <span>Scene 01</span>
+              <h3>平日夜に今月の資産変動を確認</h3>
+              <p>仕事や家事が一段落したあと、当月の増減だけをさっと確認。個別銘柄を細かく追わなくても全体像をつかめます。</p>
+            </article>
+
+            <article class="asset-graph-usage-card reveal reveal-delay">
+              <span>Scene 02</span>
+              <h3>週末に年間の成長を振り返る</h3>
+              <p>年初来でどれだけ資産が積み上がったかを、週末にゆっくり確認。継続してきた投資の手応えを実感しやすくなります。</p>
+            </article>
+
+            <article class="asset-graph-usage-card reveal reveal-delay-2">
+              <span>Scene 03</span>
+              <h3>相場が大きく動いた時に全体の影響を見る</h3>
+              <p>ニュースで相場が動いた日も、まずはポートフォリオ全体の線を確認。慌てずに影響度を把握しやすい構成です。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 新規追加: CTA -->
+      <section class="section asset-graph-cta-section">
+        <div class="container">
+          <div class="asset-graph-cta-panel reveal">
+            <h2>あなたの資産を、もっとクリアに</h2>
+            <p class="asset-graph-cta-text">
+              日々の変動も、長期の積み上がりも、ひとつのグラフで見える化。落ち着いて続けられる資産管理を始めませんか。
+            </p>
+            <div class="cta-actions">
+              <a class="btn btn-primary" href="./pricing.html">無料で始める</a>
+              <a class="btn btn-secondary asset-graph-secondary" href="./feature.html">機能一覧に戻る</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer section" id="contact">
+      <div class="container footer-grid service-footer-grid">
+        <div>
+          <a class="brand site-logo footer-brand footer-logo" href="./index.html" aria-label="Stock Note ホーム">
+            <img src="./assets/logo-stocknote.png" alt="Stock Note" />
+          </a>
+        </div>
+
+        <div class="footer-column">
+          <a href="./terms.html">利用規約</a>
+          <a href="./privacy.html">プライバシーポリシー</a>
+        </div>
+
+        <div class="footer-column">
+          <a href="./index.html#contact">運営会社</a>
+          <a href="./contact.html">ヘルプセンター</a>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <small>&copy; 2024 STOCK NOTE. All Rights Reserved.</small>
+      </div>
+    </footer>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
